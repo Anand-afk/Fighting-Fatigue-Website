@@ -78,7 +78,7 @@ car_audio.muted = false;
     //   var infowindow = new google.maps.infowindow();
 
     var image = {
-      url: "crash.jpg", // url
+      url: "car_crash.png", // url
       scaledSize: new google.maps.Size(50, 35), // scaled size
       origin: new google.maps.Point(0, 0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
