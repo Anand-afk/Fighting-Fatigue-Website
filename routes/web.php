@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LocationController@index');
 Route::post('/getlocation','LocationController@saveloc');

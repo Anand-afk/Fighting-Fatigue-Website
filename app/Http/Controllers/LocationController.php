@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Location;
+use App\HighSeverity;
 
 class LocationController extends Controller
 {
@@ -18,4 +19,9 @@ class LocationController extends Controller
         $location->save();
         return ['success' => true, 'message' => 'Location inserted successfully'];
     } 
+
+    public function index(){
+        $highSeverity = HighSeverity::all();
+        return view('welcome',compact('highSeverity'));
+    }
 }
