@@ -27,7 +27,7 @@
     </main>
     <audio id="car_audio" src="car_crash.wav" muted autoplay></audio>
    
-    <script src="js/script.js"></script>
+    <script src="js/script.js?"{{ uniqid()}}></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1PK6pfLyjI_61ODDmiuRdqMPBvNxS5bQ&callback=init"></script>
   </body>
 </html>
