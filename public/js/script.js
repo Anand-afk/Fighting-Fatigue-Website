@@ -2,15 +2,14 @@
 var context = new (window.AudioContext || window.webkitAudioContext)();
 
 car_audio.muted = false;
-  // })
- 
+confirm("Click Anywhere on the Map to start tracking");
+
   const createMap = ({ lat, lng }) => {
     return new google.maps.Map(document.getElementById('map'), {
       center: { lat, lng },
       zoom: 15
     });
   };
-
 
   const createMarker = ({ map, position }) => {
     var data = 90;
@@ -30,7 +29,7 @@ car_audio.muted = false;
     if ('geolocation' in navigator === false) {
       return onError(new Error('Geolocation is not supported by your browser.'));
     }
-    return navigator.geolocation.watchPosition(onSuccess, onError, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true })
+    return navigator.geolocation.watchPosition(onSuccess, onError, { maximumAge: 60000, timeout: 60000, enableHighAccuracy: true })
   };
 
   /**
@@ -71,11 +70,10 @@ car_audio.muted = false;
     }
   }
 
-  function init() {
-    const initialPosition = { lat: 59.32, lng: 17.84 };
+  function init() { 
+    const initialPosition = { lat: -37.818594, lng: 144.967466 };
     const map = createMap(initialPosition);
-   
-    //   var infowindow = new google.maps.infowindow();
+
 
     var image = {
       url: "car_crash.png", // url
@@ -116,8 +114,6 @@ car_audio.muted = false;
             $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
             $info.classList.remove('error');
          
-    
-              
             context.resume().then(() => {
             highSeverity.forEach(eachSeverity => {
               acclat = eachSeverity.Latitude;
@@ -147,5 +143,4 @@ car_audio.muted = false;
     });
   
     });
-  
   }

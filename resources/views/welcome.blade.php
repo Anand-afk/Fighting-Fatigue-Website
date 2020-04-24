@@ -21,8 +21,8 @@
   </head>
   <body>
     <main class="container">
-      <div id="map" class="map"></div>
-      <button id="Enable Audio">Enable Audio</button>
+      <div id="map" class="map">
+      </div>
       <p id="info" class="info"></p> 
     </main>
     <audio id="car_audio" src="car_crash.wav" muted autoplay></audio>
