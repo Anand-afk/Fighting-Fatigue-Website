@@ -13,8 +13,12 @@
 
     <script type='text/javascript'>
       <?php
-      $js_array = json_encode($highSeverity);
-      echo "var highSeverity = ". $js_array . ";\n";
+      $js_array_high = json_encode($highSeverity);
+      echo "var highSeverity = ". $js_array_high . ";\n";
+      $js_array_med = json_encode($mediumSeverity);
+      echo "var mediumSeverity = ". $js_array_med . ";\n";
+      $js_array_least = json_encode($leastSeverity);
+      echo "var leastSeverity = ". $js_array_least . ";\n";
       ?>
 
     </script>
