@@ -1,6 +1,27 @@
 // const audioContainer = document.getElementById("audioContainer");
 var context = new (window.AudioContext || window.webkitAudioContext)();
 
+function getUrlVars()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&'); 
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+
+            if($.inArray(hash[0], vars)>-1)
+            {
+                vars[hash[0]]+=","+hash[1];
+            }
+            else
+            {
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+        }
+        return vars;
+    }
+
 car_audio.muted = false;
 confirm("Click Anywhere on the Map to start tracking");
 
@@ -73,7 +94,10 @@ confirm("Click Anywhere on the Map to start tracking");
   function init() { 
     const initialPosition = { lat: -37.818594, lng: 144.967466 };
     const map = createMap(initialPosition);
+    var options = getUrlVars();
 
+    name=console.log(options["name"].replace("?", ""));
+    severity=console.log(options["choice"]);
 
     var image = {
       url: "car_crash.png", // url
@@ -115,6 +139,7 @@ confirm("Click Anywhere on the Map to start tracking");
             $info.classList.remove('error');
          
             context.resume().then(() => {
+
             highSeverity.forEach(eachSeverity => {
               acclat = eachSeverity.Latitude;
               acclng = eachSeverity.Longitude;
@@ -123,12 +148,13 @@ confirm("Click Anywhere on the Map to start tracking");
                 if (x < 0.5) {
                   console.log(acclat,acclng);
                   console.log(lat,lng);
-                    document.getElementById('car_audio').play();
+                  document.getElementById('car_audio').play();
                 }
                 else {
                   console.log("Far");
                 }
             })
+          
            });
           }
         else {

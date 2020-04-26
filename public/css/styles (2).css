@@ -1,0 +1,79 @@
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#carousel-1 {
+  position: relative;
+}
+
+.img-fluid {
+  bottom: 0;
+}
+
+#text {
+  bottom: auto;
+}
+
+#text1 {
+  bottom: auto;
+  width: auto;
+  text-align: left;
+}
+
+#text2 {
+  padding-top: 100px;
+  text-align: right;
+  margin-bottom: 5%;
+}
+
+@media (min-width: 768px) {
+  #text2 {
+    padding-top: 100px;
+    text-align: right;
+    margin-bottom: 10%;
+  }
+}
+
+#video iframe {
+  width: 90%;
+  height: 300px;
+}
+
+@media (min-width: 992px) {
+  #video iframe {
+    width: 90%;
+    height: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  #slides {
+    margin-top: 0;
+    padding-top: 40px;
+  }
+}
+
+#carousel-1 {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  #carousel-1 {
+    margin-top: 25px;
+  }
+}
+
+#text1 {
+  padding-top: 60px;
+}
+
+@media (min-width: 768px) {
+  #text1 {
+    padding-top: 60px;
+    margin-top: 5%;
+  }
+}
+

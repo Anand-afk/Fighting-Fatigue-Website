@@ -11,5 +11,25 @@
 |
 */
 
-Route::get('/', 'LocationController@index');
-Route::post('/getlocation','LocationController@saveloc');
+Route::get('/', function(){
+    return view('index');
+});
+Route::get('/index', function(){
+    return view('index');
+});
+Route::get('/login', function(){
+    return view('login');
+});
+Route::get('/prompt', function(){
+    return view('prompt');
+});
+Route::get('/tips', function(){
+    return view('tips');
+});
+// Route::get('/welcome', function(){
+//     return view('welcome');
+// });
+Route::get('/welcome', 'LocationController@index');
+// Route::post('/getlocation','LocationController@saveloc');
+
+
