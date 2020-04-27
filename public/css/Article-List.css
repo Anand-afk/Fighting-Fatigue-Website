@@ -192,7 +192,8 @@ getPrompt {
 
 @media (min-width: 1200px) {
   .navbar-dark .navbar-brand {
-    font-size: 3vw;
+    font-size: 2vw;
+    padding-right: 0px;
   }
 }
 
@@ -211,11 +212,23 @@ getPrompt {
 
 @media (min-width: 1200px) {
   #slide2 {
-    margin-bottom: 30%;
+    width: 70%;
+    padding-left: 15%;
   }
 }
 
-.text-center {
-  border-radius: 20px;
+#promptSection {
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#promptSlide {
+  width: 90%;
+}
+
+.navbar-dark .navbar-brand {
+  width: 65%;
 }
 
