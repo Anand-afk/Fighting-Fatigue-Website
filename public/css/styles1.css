@@ -26,7 +26,6 @@
 #text2 {
   padding-top: 100px;
   text-align: right;
-  margin-bottom: 5%;
 }
 
 @media (min-width: 768px) {
@@ -73,7 +72,6 @@
 @media (min-width: 768px) {
   #text1 {
     padding-top: 60px;
-    margin-top: 5%;
   }
 }
 
