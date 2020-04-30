@@ -95,14 +95,37 @@ function init(audioStatus) {
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(0, 0) // anchor
     };
-
+console.log(severity);
     highSeverity.forEach(element => {
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(element.Latitude, element.Longitude),
             map: map,
-            icon: image
+            icon: image,
+            optimized: false
         });
-    });
+
+        if (severity == "high"){
+            var content = "High Severity: There are more than 10 accidents in this cluster. Be careful !!! High risk area ";
+
+        }
+        else if (severity == "medium"){
+            var content = "Medium Severity: There are more than 5 accidents in this cluster. Chances of accident is moderate !!!";
+        }
+        else if (severity == "least"){
+            var content = "Least Severity: There are more than 3 accidents in this cluster. Chances of accident is less !!!";
+        }
+
+        var infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+            return function() {
+                infowindow.setContent(content);
+                infowindow.open(map,marker);
+            };
+        })(marker,content,infowindow));
+
+});
+
 
     var oldlat = "";
     var oldlng = "";

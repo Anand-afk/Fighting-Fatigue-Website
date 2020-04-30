@@ -27,7 +27,8 @@
       $js_array_high = json_encode($highSeverity);
       echo "var highSeverity = ". $js_array_high . ";\n";
       ?>
-
+          severity  = "<?php echo $severity; ?>";
+        console.log(severity);
     </script>
   </head>
   <body>
@@ -56,6 +57,7 @@
         <span class="slider round"> </span>
       </label> &nbsp;&nbsp;&nbsp;Turn On/Off the alerts</h4>
       </span>
+
     </main>
     <audio id="car_audio" src="car_crash.wav" muted autoplay></audio>
 
@@ -66,6 +68,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="js/prompt.js"></script>
     <script src="js/script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1PK6pfLyjI_61ODDmiuRdqMPBvNxS5bQ&callback=init"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB1PK6pfLyjI_61ODDmiuRdqMPBvNxS5bQ&callback=init"></script>
   </body>
 </html>
