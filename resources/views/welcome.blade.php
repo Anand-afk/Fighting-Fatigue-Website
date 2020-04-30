@@ -50,9 +50,17 @@
     </header>
       <div id="map" class="map">
       </div>
-      <p id="info" class="info"></p> 
+      <br>
+      <h4> Turn On/Off the alerts</h4>
+      <label class="switch">
+        <input id="check" type="checkbox" onclick = "validate()"> 
+        <span class="slider round"> </span>
+        
+      </label>
     </main>
     <audio id="car_audio" src="car_crash.wav" muted autoplay></audio>
+ 
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bs-init.js"></script>
