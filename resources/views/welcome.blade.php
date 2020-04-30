@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/fonts/font-awesome.min.css">
@@ -20,14 +20,14 @@
 
     <title>🌏 Alert the Driver</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css">
 
     <script type='text/javascript'>
       <?php
       $js_array_high = json_encode($highSeverity);
       echo "var highSeverity = ". $js_array_high . ";\n";
       ?>
-    
+
     </script>
   </head>
   <body>
@@ -51,15 +51,14 @@
       <div id="map" class="map">
       </div>
       <br>
-      <h4> Turn On/Off the alerts</h4>
-      <label class="switch">
-        <input id="check" type="checkbox" onclick = "validate()"> 
+      <span><h4>  <label class="switch">
+        <input id="check" type="checkbox" onclick = "validate()">
         <span class="slider round"> </span>
-        
-      </label>
+      </label> &nbsp;&nbsp;&nbsp;Turn On/Off the alerts</h4>
+      </span>
     </main>
     <audio id="car_audio" src="car_crash.wav" muted autoplay></audio>
- 
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
