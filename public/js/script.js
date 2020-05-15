@@ -1,7 +1,18 @@
 // const audioContainer = document.getElementById("audioContainer");
 var context = new (window.AudioContext || window.webkitAudioContext)();
 //confirm("Click Anywhere on the Map to start tracking");
-document.getElementById("map").innerHTML = "<div style = 'margin-top : 20%'><h1>Turn on the alerts</h1> </div>";
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: {lat: 34.04924594193164, lng: -118.24104309082031}
+    });
+
+
+}
+
+
+
 const createMap = ({lat, lng}) => {
     return new google.maps.Map(document.getElementById('map'), {
         center: {lat, lng},
@@ -9,6 +20,15 @@ const createMap = ({lat, lng}) => {
     });
 };
 
+window.onload = function () {
+    navigator.geolocation.getCurrentPosition(plotPosition);
+    getUserLocation();
+}
+
+function plotPosition(position) {
+    const initialPosition = {lat: position.coords.latitude, lng: position.coords.longitude};
+    const map = createMap(initialPosition);
+}
 
 const createMarker = ({map, position}) => {
     var data = 90;
@@ -75,113 +95,221 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     }
 }
 
-function validate() {
-    var remember = document.getElementById("check");
+// function validate() {
+//     var remember = document.getElementById("check");
+//
+//     if (remember.checked === true) {
+//
+//
+//     } else if (remember.checked === false) {
+//         init(true);
+//     }
+// }
 
-    if (remember.checked === true) {
-        init(false);
-    } else if (remember.checked === false) {
-        init(true);
-    }
+
+function mute() {
+    text = document.getElementById("mutetext");
+    if (text.innerText === "Mute alerts") {
+        text.innerText = "Unmute alerts";
+    } else text.innerText = "Mute alerts";
 }
 
-function init(audioStatus) {
-    const initialPosition = {lat: -37.818594, lng: 144.967466};
-    const map = createMap(initialPosition);
+function startdriving() {
+    var elem = document.getElementById("startdrive");
+    elem.setAttribute("class", "btn btn-primary btn-block btn-danger");
+    if (elem.textContent == "Start Driving") {
+        elem.textContent = "Stop Driving";
+        // init(false);
+        var twohours = 10,
+            display = document.querySelector('#time');
+        startTimer(twohours, display);
 
-    var image = {
-        url: "car_crash.png", // url
-        scaledSize: new google.maps.Size(50, 35), // scaled size
-        origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
-    };
-console.log(severity);
-    highSeverity.forEach(element => {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(element.Latitude, element.Longitude),
-            map: map,
-            icon: image,
-            optimized: false
-        });
+        const initialPosition = {lat: -37.818594, lng: 144.967466};
+        const map = createMap(initialPosition);
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+        var image = {
+            url: "car_crash.png", // url
+            scaledSize: new google.maps.Size(50, 35), // scaled size
+            origin: new google.maps.Point(0, 0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
 
-        if (severity == "high"){
-            var content = "High Severity: There are more than 10 accidents in this cluster. Be careful !!! High risk area ";
-
-        }
-        else if (severity == "medium"){
-            var content = "Medium Severity: There are more than 5 accidents in this cluster. Chances of accident is moderate !!!";
-        }
-        else if (severity == "least"){
-            var content = "Least Severity: There are more than 3 accidents in this cluster. Chances of accident is less !!!";
-        }
-
-        var infowindow = new google.maps.InfoWindow();
-
-        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
-            return function() {
-                infowindow.setContent(content);
-                infowindow.open(map,marker);
-            };
-        })(marker,content,infowindow));
-
-});
-
-
-    var oldlat = "";
-    var oldlng = "";
-
-    document.addEventListener('click', function () {
-
-        const marker = createMarker(
-            {
-                map,
-                position: initialPosition
+        highSeverity.forEach(element => {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(element.Latitude, element.Longitude),
+                map: map,
+                icon: image,
+                optimized: false
             });
 
-        let watchId = trackLocation({
-            onSuccess: ({coords: {latitude: lat, longitude: lng}}) => {
-                if (oldlat != lat.toFixed(3) && oldlng != lng.toFixed(3)) {
-                    oldlat = lat.toFixed(3);
-                    oldlng = lng.toFixed(3);
-                    map.panTo({lat, lng});
-                    marker.setPosition({lat, lng});
+            if (severity == "high") {
+                var content = "High Severity: There are more than 10 accidents in this cluster. Be careful !!! High risk area ";
 
+            } else if (severity == "medium") {
+                var content = "Medium Severity: There are more than 5 accidents in this cluster. Chances of accident is moderate !!!";
+            } else if (severity == "least") {
+                var content = "Least Severity: There are more than 3 accidents in this cluster. Chances of accident is less !!!";
+            }
 
-                    var remember = document.getElementById("check");
-                    if (remember.checked === true) {
+            var infowindow = new google.maps.InfoWindow();
+
+            google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                return function () {
+                    infowindow.setContent(content);
+                    infowindow.open(map, marker);
+                };
+            })(marker, content, infowindow));
+        })
+
+        var oldlat = "";
+        var oldlng = "";
+
+        document.addEventListener('click', function () {
+
+            const marker = createMarker(
+                {
+                    map,
+                    position: initialPosition
+                });
+            getUserLocation();
+            let watchId = trackLocation({
+                onSuccess: ({coords: {latitude: lat, longitude: lng}}) => {
+                    if (oldlat != lat.toFixed(3) && oldlng != lng.toFixed(3)) {
+                        oldlat = lat.toFixed(3);
+                        oldlng = lng.toFixed(3);
+                        map.panTo({lat, lng});
+                        marker.setPosition({lat, lng});
 
                         highSeverity.forEach(eachSeverity => {
                             acclat = eachSeverity.Latitude;
                             acclng = eachSeverity.Longitude;
 
                             x = distance(acclat, acclng, lat, lng, 'K');
-                            if (x < 0.5) {
-                                const bouncemarker = new google.maps.Marker({
-                                    position: new google.maps.LatLng(acclat, acclng),
-                                    map: map,
-                                    icon: image,
-                                    animation: google.maps.Animation.BOUNCE
-                                });
-                                setTimeout(function () {
-                                    bouncemarker.setAnimation(null);
-                                }, 10000);
+                            remember = document.getElementById("check")
+                            if (remember.checked === true && elem.textContent == "Stop Driving") {
+                                if (x < 0.5) {
+                                    const bouncemarker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(acclat, acclng),
+                                        map: map,
+                                        icon: image,
+                                        animation: google.maps.Animation.BOUNCE
+                                    });
+                                    setTimeout(function () {
+                                        bouncemarker.setAnimation(null);
+                                    }, 10000);
 
-                                car_audio.muted = audioStatus;
-                                console.log("This is audio status false");
-                                document.getElementById('car_audio').play();
-
+                                    document.getElementById('car_audio').muted = false;
+                                    document.getElementById('car_audio').play();
+                                }
                             }
                         })
 
+                    } else {
+                        console.log("duplicate");
                     }
-
-
-                } else {
-                    console.log("duplicate");
                 }
-            }
-        });
+            });
 
-    });
+        });
+    } else {
+        elem.textContent = "Start Driving";
+        elem.setAttribute("class", "btn btn-primary btn-block btn-success");
+        stopTimer();
+        navigator.geolocation.getCurrentPosition(plotPosition);
+    }
 }
+
+function snooze() {
+    var elem = document.getElementById("startdrive");
+    elem.setAttribute("class", "btn btn-primary btn-block btn-danger");
+    if (elem.textContent == "Start Driving") elem.textContent = "Stop Driving";
+    snoozetimer = setTimeout(function () {
+        $('#timermodal').modal('show');
+    }, 5000);
+    document.getElementById("break").onclick = function () {
+        clearInterval(snoozetimer);
+    }
+        }
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    interval = setInterval(function () {
+        hours = parseInt((timer / 3600) % 24, 10);
+        minutes = parseInt((timer / 60) % 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        hours = hours < 10 ? hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = hours + ":" + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            $("#timermodal").modal();
+            timer = duration;
+            var elem = document.getElementById("startdrive");
+            elem.setAttribute("class", "btn btn-primary btn-block btn-success");
+            if (elem.textContent == "Stop Driving") {
+                elem.textContent = "Start Driving";
+            }
+            stopTimer();
+        }
+    }, 500);
+}
+
+function stopTimer() {
+    display = document.querySelector('#time');
+    clearInterval(interval);
+    hours = "   0";
+    minutes = "00";
+    seconds = "00";
+
+    display.textContent = hours + ":" + minutes + ":" + seconds;
+}
+
+function init(audioStatus) {
+
+}
+
+function getUserLocation() {
+    function locationSuccess(position) {
+        var coords = position.coords;
+        generateURL(coords);
+    }
+    function locationError() {
+        console.log("error")
+    }
+    navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
+}
+
+function generateURL(coords) {
+    var cafeURL = 'https://www.google.com/maps/search/cafe/@' + coords.latitude + ',' + coords.longitude + ",14z";
+    var parkingURL = 'https://www.google.com/maps/search/parking+lots/@' + coords.latitude + ',' + coords.longitude + ",14z";
+    var x = document.getElementById('parkinglink');
+    var a = document.getElementById('cafelink'); //or grab it by tagname etc
+    a.href = cafeURL;
+    x.href = parkingURL;
+    var y = document.getElementById('parkinglinkTakeABreak');
+    var b = document.getElementById('cafelinkTakeABreak'); //or grab it by tagname etc
+    b.href = cafeURL;
+    y.href = parkingURL;
+}
+
+// function openModal() {
+//     setTimeout(
+//        ,
+//         1000);
+//     setTimeout(function(){
+//
+//         if(typeof callback == 'function'){
+//             callback();
+//         }
+//     }, 2000);
+// }
+
+function takingBreak() {
+    $('#basicExampleModal').modal('hide')
+}
+
+
 

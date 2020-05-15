@@ -29,7 +29,7 @@ Route::get('/tips', function(){
 // Route::get('/welcome', function(){
 //     return view('welcome');
 // });
-Route::get('/welcome', 'LocationController@index');
+Route::post('/welcome', 'LocationController@index');
 // Route::post('/getlocation','LocationController@saveloc');
 
 
