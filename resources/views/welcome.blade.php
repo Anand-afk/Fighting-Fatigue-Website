@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="row" style="margin-top: 5%">
+    <div class="row" style="margin-top: 10%">
         <div class="col-6 col-lg-9">
             <div style="font-size: 12pt ;font-style: italic">Next break in <span id="time">2:00:00</span></div>
         </div>

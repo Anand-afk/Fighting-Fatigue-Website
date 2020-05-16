@@ -1,3 +1,7 @@
+var carMarkerArray = [];
+var initLatitude;
+var initLongitude;
+
 // const audioContainer = document.getElementById("audioContainer");
 var context = new (window.AudioContext || window.webkitAudioContext)();
 //confirm("Click Anywhere on the Map to start tracking");
@@ -7,8 +11,6 @@ function initMap() {
         zoom: 13,
         center: {lat: 34.04924594193164, lng: -118.24104309082031}
     });
-
-
 }
 
 
@@ -23,6 +25,10 @@ const createMap = ({lat, lng}) => {
 window.onload = function () {
     navigator.geolocation.getCurrentPosition(plotPosition);
     getUserLocation();
+    navigator.geolocation.getCurrentPosition(function (position) {
+        initLatitude = position.coords.latitude;
+        initLongitude = position.coords.longitude;
+    });
 }
 
 function plotPosition(position) {
@@ -124,7 +130,8 @@ function startdriving() {
             display = document.querySelector('#time');
         startTimer(twohours, display);
 
-        const initialPosition = {lat: -37.818594, lng: 144.967466};
+        const initialPosition  = {lat: initLatitude, lng: initLongitude};
+        console.log(initialPosition);
         const map = createMap(initialPosition);
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(map);
@@ -167,11 +174,12 @@ function startdriving() {
 
         document.addEventListener('click', function () {
 
-            const marker = createMarker(
+            const carMarker = createMarker(
                 {
                     map,
                     position: initialPosition
                 });
+            carMarkerArray.push(carMarker);
             getUserLocation();
             let watchId = trackLocation({
                 onSuccess: ({coords: {latitude: lat, longitude: lng}}) => {
@@ -179,7 +187,7 @@ function startdriving() {
                         oldlat = lat.toFixed(3);
                         oldlng = lng.toFixed(3);
                         map.panTo({lat, lng});
-                        marker.setPosition({lat, lng});
+                        carMarker.setPosition({lat, lng});
 
                         highSeverity.forEach(eachSeverity => {
                             acclat = eachSeverity.Latitude;
@@ -253,10 +261,14 @@ function startTimer(duration, display) {
                 elem.textContent = "Start Driving";
             }
             stopTimer();
+            carMarkerArray.forEach(removeMarker);
         }
-    }, 500);
+    }, 10000);
 }
 
+function removeMarker(item, index) {
+    item.setMap(null);
+}
 function stopTimer() {
     display = document.querySelector('#time');
     clearInterval(interval);
