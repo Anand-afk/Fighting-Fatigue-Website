@@ -80,7 +80,10 @@
             </nav>
         </header>
     </div>
-    <div class="row" style="margin-top: 20%">
+    <div class="row" style="margin-top: 15%; margin-left: 1%">
+        <div style="font-size: 12pt ;font-style: italic">Next break in <span id="time">2:00:00</span></div>
+    </div>
+    <div class="row" style="margin-top: 2%">
         <div class="col-12">
             <div id="map" class="iframe-container">
             </div>
@@ -89,9 +92,11 @@
 
     <div class="row" style="margin-top: 3%">
         <div class="col-6 col-lg-9">
-            <div style="font-size: 12pt ;font-style: italic">Next break in <span id="time">2:00:00</span></div>
+
+            <img height="20" width="20" src="img/closure.png"><i class="i">&nbsp;&nbsp;Road Closure <br>
+                <img src="car_crash.png" height="23" width="26"> Accident cluster</i>
         </div>
-        <div class="col-2 col-lg-1" style>
+        <div class="col-2 col-lg-1" style="margin-top: 1%">
             <label class="switch">
                 <input id="check" type="checkbox" checked onclick="mute()">
                 <span class="slider round"> </span>
@@ -103,7 +108,7 @@
                 </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 5%">
+    <div class="row" style="margin-top: 3%">
         <div class="col-5">
             <button id = "startdrive" class="btn btn-primary btn-block  btn-success" onclick="startdriving()">Start Driving</button>
         </div>

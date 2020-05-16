@@ -83,7 +83,9 @@
 }
 .goog-text-highlight {
   background-color: transparent !important;
-  border: none !important; 
+  border: none !important;
   box-shadow: none !important;
 }
-
+.i {
+    font-size: small;
+}
