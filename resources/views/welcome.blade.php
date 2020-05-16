@@ -33,7 +33,7 @@
         .iframe-container {
             position: relative;
             width: 100%;
-            height: 450px;
+            height: 480px;
             padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
         }
 
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="row" style="margin-top: 10%">
+    <div class="row" style="margin-top: 3%">
         <div class="col-6 col-lg-9">
             <div style="font-size: 12pt ;font-style: italic">Next break in <span id="time">2:00:00</span></div>
         </div>

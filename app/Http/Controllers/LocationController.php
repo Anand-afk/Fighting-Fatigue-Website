@@ -25,9 +25,6 @@ class LocationController extends Controller
     public function index(Request $request){
         $input = $request->all();
 //        dd($input);
-        $score = 0;
-        $freq = "";
-        $selected = 0;
 
         if ($input['freq']=='Low'){
             $severity="high";
