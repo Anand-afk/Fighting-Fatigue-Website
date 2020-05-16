@@ -80,8 +80,8 @@
             </nav>
         </header>
     </div>
-    <div class="row" style="margin-top: 15%; margin-left: 1%">
-        <div style="font-size: 12pt ;font-style: italic">Next break in <span id="time">2:00:00</span></div>
+    <div class="row" style="margin-top: 17%; margin-left: 1%">
+        <div style="font-size: 12pt ;font-style: italic">Time driving <span id="time">00:00:00</span></div>
     </div>
     <div class="row" style="margin-top: 2%">
         <div class="col-12">

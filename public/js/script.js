@@ -126,7 +126,7 @@ function startdriving() {
     if (elem.textContent == "Start Driving") {
         elem.textContent = "Stop Driving";
         // init(false);
-        var twohours = 10,
+        var twohours = 0,
             display = document.querySelector('#time');
         startTimer(twohours, display);
 
@@ -141,7 +141,6 @@ function startdriving() {
             origin: new google.maps.Point(0, 0), // origin
             anchor: new google.maps.Point(0, 0) // anchor
         };
-
         highSeverity.forEach(element => {
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(element.Latitude, element.Longitude),
@@ -252,7 +251,7 @@ function startTimer(duration, display) {
 
         display.textContent = hours + ":" + minutes + ":" + seconds;
 
-        if (--timer < 0) {
+        if (++timer > 7200) {
             $("#timermodal").modal();
             timer = duration;
             var elem = document.getElementById("startdrive");
@@ -263,7 +262,7 @@ function startTimer(duration, display) {
             stopTimer();
             carMarkerArray.forEach(removeMarker);
         }
-    }, 10000);
+    }, 1000);
 }
 
 function removeMarker(item, index) {
