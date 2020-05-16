@@ -133,6 +133,7 @@ function startdriving() {
         const initialPosition  = {lat: initLatitude, lng: initLongitude};
         console.log(initialPosition);
         const map = createMap(initialPosition);
+        map.setOptions({ minZoom: 8, maxZoom: 15     });
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(map);
         var image = {
