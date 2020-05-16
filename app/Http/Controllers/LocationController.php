@@ -24,6 +24,7 @@ class LocationController extends Controller
 
     public function index(Request $request){
         $input = $request->all();
+//        dd($input);
         $score = 0;
         $freq = "";
         $selected = 0;
@@ -38,10 +39,11 @@ class LocationController extends Controller
         $highSeverity = HighSeverity::all();
         return view('welcome',compact('highSeverity','severity'));
         }
-        if($input['freq']=='medium'){
+        if($input['freq']=='Medium'){
             $severity="medium";
         $highSeverity = MediumSeverity::all();
         return view('welcome',compact('highSeverity','severity'));
+
         }
     }
 }
