@@ -1,7 +1,7 @@
 function getFreq(){
     var score = 0; 
     var freq = "";     
-    var selected = 0;       
+    var selected = 0;    
     for(var i = 1; i <= 3; i++){
         var radios = document.getElementsByName("Q"+i);
         for(var j = 0; j < radios.length; j++) {
@@ -18,6 +18,7 @@ function getFreq(){
                 score += 1;
                 selected++;
             }
+            
         }
     }               
     if(score >= 7){
@@ -30,15 +31,11 @@ function getFreq(){
         freq = "Low";
     }
  
-    if(selected < 3){
+    if(selected < 3 || document.getElementById("name").value.length == 0){
         alert("Please enter all fields!");
     }
     else{
-        
-        var freqInput = document.getElementById('freqInput');
-        freqInput.value = freq;
-        document.freqForm.submit();
-        
+        alert("Alert frequency: " + freq);
     }
 
 }

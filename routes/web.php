@@ -26,6 +26,12 @@ Route::get('/prompt', function(){
 Route::get('/tips', function(){
     return view('tips');
 });
+Route::get('/about', function(){
+    return view('about');
+});
+Route::get('/terms', function(){
+    return view('terms');
+});
 // Route::get('/welcome', function(){
 //     return view('welcome');
 // });

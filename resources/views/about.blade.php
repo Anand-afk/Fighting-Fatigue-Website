@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/styles1.css">
 </head>
 
-<body style="background-color: #363232;">
+<body>
     <header>
         <nav class="navbar navbar-dark navbar-expand-md fixed-top" style="background-color: rgba(0,0,0,0.8);padding: 0px 16px;width: 100%;padding-top: 0px;padding-bottom: 0px;">
             <div class="container-fluid"><a class="navbar-brand" href="index" style="font-size: 6vw;font-weight: bold;font-style: italic;padding: 5px;padding-left: 0px;"><img src="assets/img/Final%20Web%20Logo.png" style="height: 10%;width: 20%;">&nbsp;FatigueBan</a><button data-toggle="collapse"
@@ -26,7 +26,7 @@
                     <ul class="nav navbar-nav d-md-flex d-lg-flex d-xl-flex justify-content-md-end justify-content-lg-end justify-content-xl-end">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index">Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="tips">Tips &amp; Tricks</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="login">Alert Me</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="login">Alert Me</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="prompt">Conversation starter</a></li>
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Language&nbsp;</a>
                             <div class="dropdown-menu" role="menu" id="google_translate_element">
@@ -65,48 +65,26 @@
             </script>
         </nav>
     </header>
-    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 900px;background-image: url(&quot;assets/img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 900px;">
-        <section class="text-center" style="margin-top: 11%;margin-bottom: 0px;padding-bottom: 0px;">
-            <h1 style="font-size: 6vw;font-weight: bold;">Alert Me</h1>
-            <p style="font-size: 3vw;">Filling the form to get proper alarm <br>when&nbsp;you close to&nbsp; the&nbsp;&nbsp;accident-prone areas.<br></p>
-            <form class="text-left" method="post" style="background-color: rgba(30,40,51,0.81);height: auto;padding-bottom: 0px;padding-top: 20px;width: 350px;max-width: none;padding-right: 20px;padding-left: 20px;margin-top: 5%;"
-                onsubmit="return false">
-                <h2 class="sr-only">Login Form</h2>
-                <h6 class="text-nowrap" style="padding-top: 20px;">1. Please enter a user name.</h6><input class="form-control" type="text" id="name" placeholder="User Name" name="userName">
-                <h6 class="text-nowrap" style="padding-top: 20px;">2. How long do you drive a day?</h6>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Low"><label class="form-check-label" for="formCheck-1">Less than 3 hours</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Medium"><label class="form-check-label" for="formCheck-1">3 to 6 hours</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="High"><label class="form-check-label" for="formCheck-1">More than 6 hours</label></div>
-                <h6 class="text-nowrap" style="padding-top: 20px;">3. How many days do you drive a week?
-                    <br></h6>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-15" name="Q2" value="Low"><label class="form-check-label" for="formCheck-1">Less than 3 days</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="Medium"><label class="form-check-label" for="formCheck-1">3 to 5 days</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="High"><label class="form-check-label" for="formCheck-1">More than 5 days</label></div>
-                <h6 style="padding-top: 20px;">4. When do you usually drive?<br></h6>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" for="formCheck-1">Early morning</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" for="formCheck-1">Midnight</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="Low"><label class="form-check-label" for="formCheck-1">Neither</label></div>
-                <a href="terms">
-                    <h6 class="text-nowrap" style="padding-top: 20px;font-size: 12px;color: rgb(255,255,255);">By clicking "Submit", you agree to our term of service.<br></h6>
-                </a>
-                <div class="form-group"><button class="btn btn-primary btn-block d-sm-flex justify-content-sm-center" type="submit" onclick="return getFreq()">Submit</button></div>
-            </form>
-        </section>
-    </div>
+    <section class="text-center" style="padding-top: 10%;background-color: rgba(255,255,255,0.48);height: auto;width: 100%;padding-bottom: 10px;margin-top: 10%;">
+        <h1 class="text-center" style="font-size: 6vw;color: rgb(0,0,0);background-color: #e1efed;padding: 10px;width: 80%;margin-right: auto;margin-left: auto;border-radius: 20px;">About Us</h1><img class="img-fluid" src="assets/img/Team%20Role%20Graphic.png" width="80%" style="padding-top: 20px;">
+        <h1 class="text-left" style="font-size: 3vw;width: 80%;height: auto;padding: 20px;margin-right: auto;margin-left: auto;">AZCEnding_Quest (AZCE_Q) was established in March 2020 with the aim of helping Victoria keep its road safer by reducing the numbers of accidents by one of the top five causes: fatigue. Fatigue and drowsiness are the major risks of road injuries in the
+            ride-sharing industry over Australia since the drivers work double shifts and use multiple ride-sharingplatforms simultaneously, which adds up to their working hours. <br /><br />As AZCEnding_Quest our dedicated team is working on developing a solution
+            for social good that will have different features, all motivating drivers not to drive when fatigued and drowsy. We believe with some effort and dedication we will be able to put forward an effective and efficient solution that will reduce the number
+            of car accidents in Victoria and hence reducing transport injuries.</h1>
+    </section>
     <div class="footer-basic" style="height: 100%;padding: 20px;">
         <footer class="text-center" style="padding-bottom: 0;padding-top: 0;">
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="about" style="color: rgb(170,170,170);font-size: 16px;">About Us</a></li>
                 <li class="list-inline-item"><a href="terms" style="color: rgb(170,170,170);font-size: 16px;">Terms of Service&nbsp;</a></li>
             </ul>
-            <p class="copyright" style="margin-top: 0px;"><br><img class="img-fluid" src="assets/img/AZCEnding-Quest%20Logo%20Clean.png" style="width: 10%;height: 10%;margin-bottom: -5px;">AZCEnding-Quest© 2020<br></p>
+            <p class="copyright" style="margin-top: 0px;font-size: 13px;"><br><img class="img-fluid" src="assets/img/AZCEnding-Quest%20Logo%20Clean.png" style="width: 10%;height: 10%;margin-bottom: -5px;">AZCEnding-Quest© 2020<br></p>
         </footer>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <script src="assets/js/survey.js"></script>
 </body>
 
 </html>

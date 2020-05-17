@@ -168,16 +168,6 @@ getPrompt {
   font-size: 2vw;
 }
 
-.slideText {
-  margin-top: 5%;
-}
-
-@media (min-width: 576px) {
-  .slideText {
-    margin-top: 13%;
-  }
-}
-
 @media (min-width: 992px) {
   .navbar.navbar-dark.navbar-expand-md.fixed-top {
     font-size: 3vw;
@@ -203,9 +193,6 @@ getPrompt {
   }
 }
 
-.h1, h1 {
-}
-
 #slide2 {
   margin-bottom: 40%;
 }
@@ -229,6 +216,33 @@ getPrompt {
 }
 
 .navbar-dark .navbar-brand {
-  width: 65%;
+  width: 60%;
+}
+
+.text-center {
+  padding-top: 15%;
+}
+
+@media (min-width: 768px) {
+  .text-center {
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-center {
+    padding-top: 0%;
+  }
+}
+
+form {
+  margin-top: 3%;
+}
+
+.carousel-control-prev {
+}
+
+#getSports-1 {
+  border: none;
 }
 

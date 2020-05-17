@@ -55,38 +55,52 @@
 <main class="container">
     <div class="row">
         <header>
-            <nav class="navbar navbar-dark navbar-expand-md fixed-top" style="background-color: rgba(0,0,0,0.8);padding: 0px 16px;width: 100%;padding-top: 0px;padding-bottom: 0px;">
-                <div class="container-fluid"><a class="navbar-brand" href="index" style="font-size: 6vw;font-weight: bold;font-style: italic;padding: 5px;padding-left: 0px;"><img src="img/Final%20Web%20Logo.png" style="height: 10%;width: 20%;">&nbsp;FatigueBan</a><button data-toggle="collapse"
-                                                                                                                                                                                                                                                                                class="navbar-toggler text-danger" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse d-md-flex d-lg-flex justify-content-md-end justify-content-lg-end"
-                         id="navcol-1" style="font-size: 3vw;">
-                        <ul class="nav navbar-nav d-md-flex d-lg-flex d-xl-flex justify-content-md-end justify-content-lg-end justify-content-xl-end">
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="index">Home</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="tips">Tips &amp; Tricks</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="login">Alert Me</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="prompt">Conversation starter</a></li>
-                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Language&nbsp;</a>
-                                <div class="dropdown-menu" role="menu" id="google_translate_element">
-                                    <div></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+        <nav class="navbar navbar-dark navbar-expand-md fixed-top" style="background-color: rgba(0,0,0,0.8);padding: 0px 16px;width: 100%;padding-top: 0px;padding-bottom: 0px;">
+            <div class="container-fluid"><a class="navbar-brand" href="index" style="font-size: 6vw;font-weight: bold;font-style: italic;padding: 5px;padding-left: 0px;"><img src="assets/img/Final%20Web%20Logo.png" style="height: 10%;width: 20%;">&nbsp;FatigueBan</a><button data-toggle="collapse"
+                    class="navbar-toggler text-danger" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse d-md-flex d-lg-flex justify-content-md-end justify-content-lg-end"
+                    id="navcol-1" style="font-size: 3vw;">
+                    <ul class="nav navbar-nav d-md-flex d-lg-flex d-xl-flex justify-content-md-end justify-content-lg-end justify-content-xl-end">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="tips">Tips &amp; Tricks</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="login">Alert Me</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="prompt">Conversation starter</a></li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Language&nbsp;</a>
+                            <div class="dropdown-menu" role="menu" id="google_translate_element">
+                                <div></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({pageLanguage: 'en',
-                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                            gaTrack: true, gaId: 'UA-37652767-1'}, 'google_translate_element');
+            </div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        autoDisplay: false,
+                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                    function changeGoogleStyles() {
+                        if($('.goog-te-menu-frame').contents().find('.goog-te-menu2').length) {
+                            $('.goog-te-menu-frame').contents().find('.goog-te-menu2').css({
+                                'max-width':'100%',
+                                'overflow-x':'auto',
+                                'box-sizing':'border-box',
+                                'height':'auto'
+                            });
+                        } else {
+                            setTimeout(changeGoogleStyles, 50);
+                        }
                     }
-
-                    var googleTranslateScript = document.createElement('script');
-                    googleTranslateScript.type = 'text/javascript';
-                    googleTranslateScript.async = true;
-                    googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(googleTranslateScript);
-                </script>
-            </nav>
+                    changeGoogleStyles();
+                }
+                var googleTranslateScript = document.createElement('script');
+                        googleTranslateScript.type = 'text/javascript';
+                        googleTranslateScript.async = true;
+                        googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(googleTranslateScript);
+            </script>
+        </nav>
         </header>
     </div>
     <div class="row" style="margin-top: 17%; margin-left: 1%">

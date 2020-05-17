@@ -83,9 +83,16 @@
 }
 .goog-text-highlight {
   background-color: transparent !important;
-  border: none !important;
+  border: none !important; 
   box-shadow: none !important;
 }
-.i {
-    font-size: small;
-}
+.goog-te-menu-frame {
+  max-width:100% !important; 
+  background-color: black;
+  }
+  .goog-te-menu2 { 
+  max-width: 100% !important;
+  overflow-x: scroll !important;
+  box-sizing:border-box !important; 
+  height:auto !important; 
+  }
