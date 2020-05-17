@@ -65,31 +65,30 @@
             </script>
         </nav>
     </header>
-    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 900px;background-image: url(&quot;assets/img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 900px;">
-        <section class="text-center" style="margin-top: 11%;margin-bottom: 0px;padding-bottom: 0px;">
-            <h1 style="font-size: 6vw;font-weight: bold;">Alert Me</h1>
-            <p style="font-size: 3vw;">Filling the form to get proper alarm <br>when&nbsp;you close to&nbsp; the&nbsp;&nbsp;accident-prone areas.<br></p>
-            <form class="text-left" method="post" style="background-color: rgba(30,40,51,0.81);height: auto;padding-bottom: 0px;padding-top: 20px;width: 350px;max-width: none;padding-right: 20px;padding-left: 20px;margin-top: 5%;"
-                onsubmit="return false">
+    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 650px;background-image: url(&quot;img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 900px;">
+        <section class="text-center" style="margin-top: 9%;margin-bottom: 0px;padding-bottom: 0px;">
+            <h1 style="font-size: 6vw;font-weight: bold; ">Alert Me</h1>
+            <p style="font-size: 4vw; color: white">Filling the form to get proper alarm <br>when&nbsp;you close to&nbsp; the&nbsp;&nbsp;accident-prone areas.<br></p>
+            <form class="text-left" name="freqForm" method="post" style="background-color: rgba(30,40,51,0.81);height: auto;padding-bottom: 0px;padding-top: 20px;width: 350px;max-width: none;padding-right: 20px;padding-left: 20px;margin-top: 15%;"
+                action="/welcome">
+                @csrf
                 <h2 class="sr-only">Login Form</h2>
-                <h6 class="text-nowrap" style="padding-top: 20px;">1. Please enter a user name.</h6><input class="form-control" type="text" id="name" placeholder="User Name" name="userName">
-                <h6 class="text-nowrap" style="padding-top: 20px;">2. How long do you drive a day?</h6>
+                
+                <h6 class="text-nowrap" style="padding-top: 20px;">1. How long do you drive a day?</h6>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Low"><label class="form-check-label" for="formCheck-1">Less than 3 hours</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Medium"><label class="form-check-label" for="formCheck-1">3 to 6 hours</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="High"><label class="form-check-label" for="formCheck-1">More than 6 hours</label></div>
-                <h6 class="text-nowrap" style="padding-top: 20px;">3. How many days do you drive a week?
-                    <br></h6>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-15" name="Q2" value="Low"><label class="form-check-label" for="formCheck-1">Less than 3 days</label></div>
+                <h6 class="text-nowrap" style="padding-top: 20px;">2. How many days do you drive a week?
+                <br></h6>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="Low"><label class="form-check-label" for="formCheck-1">Less than 3 days</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="Medium"><label class="form-check-label" for="formCheck-1">3 to 5 days</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="High"><label class="form-check-label" for="formCheck-1">More than 5 days</label></div>
-                <h6 style="padding-top: 20px;">4. When do you usually drive?<br></h6>
+                <h6 style="padding-top: 20px;">3. When do you usually drive?<br></h6>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" for="formCheck-1">Early morning</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" for="formCheck-1">Midnight</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="Low"><label class="form-check-label" for="formCheck-1">Neither</label></div>
-                <a href="terms">
-                    <h6 class="text-nowrap" style="padding-top: 20px;font-size: 12px;color: rgb(255,255,255);">By clicking "Submit", you agree to our term of service.<br></h6>
-                </a>
-                <div class="form-group"><button class="btn btn-primary btn-block d-sm-flex justify-content-sm-center" type="submit" onclick="return getFreq()">Submit</button></div>
+                <input id="freqInput" name="freq" type="text" value="" hidden>                 
+                <div class="form-group"><button onclick="getFreq()" id ="btnSubmit" class="btn btn-primary btn-block d-sm-flex justify-content-sm-center" type="button" name="btnSubmit" >Submit</button></div>
             </form>
         </section>
     </div>

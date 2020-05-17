@@ -116,7 +116,7 @@
     <div class="row" style="margin-top: 3%">
         <div class="col-6 col-lg-9">
 
-            <img height="20" width="20" src="img/closure.png"><i class="i">&nbsp;&nbsp;Road Closure <br>
+            <img height="20" width="20" src="assets/img/closure.png"><i class="i">&nbsp;&nbsp;Road Closure <br>
                 <img src="car_crash.png" height="23" width="26"> Accident cluster</i>
         </div>
         <div class="col-2 col-lg-1" style="margin-top: 1%">
