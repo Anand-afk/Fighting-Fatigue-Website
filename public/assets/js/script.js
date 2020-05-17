@@ -142,6 +142,12 @@ function startdriving() {
             origin: new google.maps.Point(0, 0), // origin
             anchor: new google.maps.Point(0, 0) // anchor
         };
+        var image1 = {
+            url: "banner.png", // url
+            scaledSize: new google.maps.Size(70, 70), // scaled size
+            origin: new google.maps.Point(0, 0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
         highSeverity.forEach(element => {
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(element.Latitude, element.Longitude),
@@ -203,9 +209,19 @@ function startdriving() {
                                         icon: image,
                                         animation: google.maps.Animation.BOUNCE
                                     });
+                                    const banner = new google.maps.Marker({
+                                        position: new google.maps.LatLng(acclat, acclng),
+                                        map: map,
+                                        icon: image1,
+                                        animation: google.maps.Animation.BOUNCE
+                                    });
                                     setTimeout(function () {
                                         bouncemarker.setAnimation(null);
+                                        banner.setAnimation(null);
                                     }, 10000);
+                                    setInterval(function () {
+                                        banner.setMap(null);
+                                    },10000);
 
                                     document.getElementById('car_audio').muted = false;
                                     document.getElementById('car_audio').play();

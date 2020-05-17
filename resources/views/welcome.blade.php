@@ -208,12 +208,12 @@
 </main>
 <audio id="car_audio" src="car_crash.wav" muted autoplay></audio>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bs-init.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-<script src="js/prompt.js"></script>
-<script src="js/script.js"></script>
+<script src="assets/js/prompt.js"></script>
+<script src="assets/js/script.js"></script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB1PK6pfLyjI_61ODDmiuRdqMPBvNxS5bQ&callback=init"></script>
