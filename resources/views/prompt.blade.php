@@ -42,11 +42,11 @@
                     layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                     gaTrack: true, gaId: 'UA-37652767-1'}, 'google_translate_element');
                 }
-              
+
                 var googleTranslateScript = document.createElement('script');
                 googleTranslateScript.type = 'text/javascript';
                 googleTranslateScript.async = true;
-                googleTranslateScript.src = 'http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
                 ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(googleTranslateScript);
               </script>
         </nav>

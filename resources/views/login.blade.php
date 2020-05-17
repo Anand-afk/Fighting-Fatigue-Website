@@ -43,11 +43,11 @@
                     layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                     gaTrack: true, gaId: 'UA-37652767-1'}, 'google_translate_element');
                 }
-              
+
                 var googleTranslateScript = document.createElement('script');
                 googleTranslateScript.type = 'text/javascript';
                 googleTranslateScript.async = true;
-                googleTranslateScript.src = 'http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
                 ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(googleTranslateScript);
               </script>
         </nav>
@@ -60,7 +60,7 @@
                 action="/welcome">
                 @csrf
                 <h2 class="sr-only">Login Form</h2>
-                
+
                 <h6 class="text-nowrap" style="padding-top: 20px;">1. How long do you drive a day?</h6>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Low"><label class="form-check-label" for="formCheck-1">Less than 3 hours</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Medium"><label class="form-check-label" for="formCheck-1">3 to 6 hours</label></div>
@@ -74,7 +74,7 @@
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" for="formCheck-1">Early morning</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" for="formCheck-1">Midnight</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="Low"><label class="form-check-label" for="formCheck-1">Neither</label></div>
-                <input id="freqInput" name="freq" type="text" value="" hidden>                 
+                <input id="freqInput" name="freq" type="text" value="" hidden>
                 <div class="form-group"><button onclick="getFreq()" id ="btnSubmit" class="btn btn-primary btn-block d-sm-flex justify-content-sm-center" type="button" name="btnSubmit" >Submit</button></div>
             </form>
         </section>
