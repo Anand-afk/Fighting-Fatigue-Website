@@ -267,7 +267,7 @@ function startTimer(duration, display) {
             stopTimer();
             carMarkerArray.forEach(removeMarker);
         }
-    }, 1000);
+    }, 10);
 }
 
 function removeMarker(item, index) {
