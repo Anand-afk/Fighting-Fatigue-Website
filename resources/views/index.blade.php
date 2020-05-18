@@ -138,8 +138,8 @@
             <div class="card text-center border rounded shadow-lg" style="padding: 20px;margin-left: 5px;margin-right: 5px;"><img class="card-img-top w-100 d-block" src="assets/img/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg">
                 <div class="card-body">
                     <h4 class="card-title"><strong>CONVERSATION STARTER</strong></h4>
-                    <p class="card-text">Having an interesting conversation can be one of the most effective ways of staying alert after a long day of work, however sometimes you end up having the same conversation with every passenger, feeling to shy to try bringing up a
-                        different topic.</p><a class="card-link" href="prompt"><button class="btn btn-primary" type="button">Learn More</button></a></div>
+                    <p class="card-text">Look at current events, and start a conversation with your passengers. Find a news topic and a headline that suits you and your passengers, and talk about the latest events in news.
+            </p><a class="card-link" href="prompt"><button class="btn btn-primary" type="button">Learn More</button></a></div>
             </div>
         </div>
     </section>
