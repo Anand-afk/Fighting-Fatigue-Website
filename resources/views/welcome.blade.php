@@ -141,14 +141,14 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Break !!!</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Break Time!!!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p><B>You have been driving since past 2 hours, we highly recommend you to take a break.</B>
-                            <br> Choose below if you want nearest cafes or parking spot:
+                        <p><B>You have been driving since past 2 hours, we highly recommend you to take a break of atleast 15 minutes.</B>
+                            <br> Choose below if you want the nearest cafes or parking spot:
                         <ul>
                             <li><a id="cafelink" href="">
                                     Cafe's
@@ -178,13 +178,13 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Break !!!</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Break Time!!!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p><B>Make sure you take a break of at least 15 minutes. <br> Choose below if you want nearest cafes
+                        <p><B>Make sure you take a break of at least 15 minutes. </b><br> Choose below if you want the nearest cafes
                                 or parking spot:
                                 <ul>
                                     <li><a id="cafelinkTakeABreak" href="">
