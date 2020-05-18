@@ -39,7 +39,7 @@
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
-                        pageLanguage: 'en',
+                        pageLanguage: 'es',
                         autoDisplay: false,
                         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
                     }, 'google_translate_element');
@@ -56,6 +56,12 @@
                         }
                     }
                     changeGoogleStyles();
+                    $('.navbar-nav li div a').on('click', function(){   
+                          if(!$( this ).hasClass('dropdown-toggle')){
+                              $('.navbar-collapse').collapse('hide');
+                          } 
+                        }
+                    );
                 }
                 var googleTranslateScript = document.createElement('script');
                         googleTranslateScript.type = 'text/javascript';

@@ -65,11 +65,11 @@
             </script>
         </nav>
     </header>
-    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 650px;background-image: url(&quot;img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 900px;">
-        <section class="text-center" style="margin-top: 9%;margin-bottom: 0px;padding-bottom: 0px;">
-            <h1 style="font-size: 6vw;font-weight: bold; ">Alert Me</h1>
-            <p style="font-size: 4vw; color: white">Filling the form to get proper alarm <br>when&nbsp;you close to&nbsp; the&nbsp;&nbsp;accident-prone areas.<br></p>
-            <form class="text-left" name="freqForm" method="post" style="background-color: rgba(30,40,51,0.81);height: auto;padding-bottom: 0px;padding-top: 20px;width: 350px;max-width: none;padding-right: 20px;padding-left: 20px;margin-top: 15%;"
+    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 650px;background-image: url(&quot;assets/img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 700px;">
+        <section class="text-center" style="margin-top: 11%;margin-bottom: 0px;padding-bottom: 0px;">
+            <h1 style="font-size: 6vw;font-weight: bold;color: rgb(255,255,255);">Alert Me</h1>
+            <p style="font-size: 3.5vw;color: rgb(255,255,255);">Please fill in the form to get <br> alerts according to your personal needs</p>
+            <form class="text-left" name="freqForm" method="post" style="background-color: rgba(30,40,51,0.81);height: auto;padding-bottom: 0px;padding-top: 20px;width: 350px;max-width: none;padding-right: 20px;padding-left: 20px;margin-top: 20%"
                 action="/welcome">
                 @csrf
                 <h2 class="sr-only">Login Form</h2>
@@ -106,6 +106,7 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="assets/js/survey.js"></script>
+
 </body>
 
 </html>

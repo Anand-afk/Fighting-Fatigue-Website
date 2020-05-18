@@ -13,8 +13,6 @@ function initMap() {
     });
 }
 
-
-
 const createMap = ({lat, lng}) => {
     return new google.maps.Map(document.getElementById('map'), {
         center: {lat, lng},
@@ -34,6 +32,15 @@ window.onload = function () {
 function plotPosition(position) {
     const initialPosition = {lat: position.coords.latitude, lng: position.coords.longitude};
     const map = createMap(initialPosition);
+    var noPoi = [
+        {
+            featureType: "poi",
+            stylers: [
+                { visibility: "off" }
+            ]
+        }
+    ];
+    map.setOptions({styles: noPoi});
 }
 
 const createMarker = ({map, position}) => {
@@ -101,23 +108,13 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     }
 }
 
-// function validate() {
-//     var remember = document.getElementById("check");
-//
-//     if (remember.checked === true) {
-//
-//
-//     } else if (remember.checked === false) {
-//         init(true);
-//     }
-// }
 
 
 function mute() {
     text = document.getElementById("mutetext");
-    if (text.innerText === "Mute alerts") {
-        text.innerText = "Unmute alerts";
-    } else text.innerText = "Mute alerts";
+    if (text.innerText === "Turn off alerts") {
+        text.innerText = "Turn on alerts";
+    } else text.innerText = "Turn off alerts";
 }
 
 function startdriving() {
@@ -144,7 +141,7 @@ function startdriving() {
         };
         var image1 = {
             url: "banner.png", // url
-            scaledSize: new google.maps.Size(70, 70), // scaled size
+            scaledSize: new google.maps.Size(100, 100), // scaled size
             origin: new google.maps.Point(0, 0), // origin
             anchor: new google.maps.Point(0, 0) // anchor
         };
@@ -209,19 +206,10 @@ function startdriving() {
                                         icon: image,
                                         animation: google.maps.Animation.BOUNCE
                                     });
-                                    const banner = new google.maps.Marker({
-                                        position: new google.maps.LatLng(acclat, acclng),
-                                        map: map,
-                                        icon: image1,
-                                        animation: google.maps.Animation.BOUNCE
-                                    });
+                                
                                     setTimeout(function () {
-                                        bouncemarker.setAnimation(null);
-                                        banner.setAnimation(null);
-                                    }, 10000);
-                                    setInterval(function () {
-                                        banner.setMap(null);
-                                    },10000);
+                                       bouncemarker.setAnimation(null);
+                                    }, 10000);  
 
                                     document.getElementById('car_audio').muted = false;
                                     document.getElementById('car_audio').play();
@@ -262,7 +250,7 @@ function startTimer(duration, display) {
         minutes = parseInt((timer / 60) % 60, 10);
         seconds = parseInt(timer % 60, 10);
 
-        hours = hours < 10 ? hours : hours;
+        hours = hours < 10 ? "0" + hours : hours;
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
@@ -288,7 +276,7 @@ function removeMarker(item, index) {
 function stopTimer() {
     display = document.querySelector('#time');
     clearInterval(interval);
-    hours = "   0";
+    hours = "00";
     minutes = "00";
     seconds = "00";
 
@@ -323,17 +311,6 @@ function generateURL(coords) {
     y.href = parkingURL;
 }
 
-// function openModal() {
-//     setTimeout(
-//        ,
-//         1000);
-//     setTimeout(function(){
-//
-//         if(typeof callback == 'function'){
-//             callback();
-//         }
-//     }, 2000);
-// }
 
 function takingBreak() {
     $('#basicExampleModal').modal('hide')

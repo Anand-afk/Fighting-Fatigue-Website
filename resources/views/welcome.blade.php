@@ -104,7 +104,7 @@
         </header>
     </div>
     <div class="row" style="margin-top: 17%; margin-left: 1%">
-        <div style="font-size: 12pt ;font-style: italic">Time driving <span id="time">00:00:00</span></div>
+        <div style="font-size: 12pt ;font-style: italic">Time driving : <span id="time">00:00:00</span></div>
     </div>
     <div class="row" style="margin-top: 2%">
         <div class="col-12">
@@ -127,7 +127,7 @@
         </div>
         <div class="col-4 col-lg-2">
                 <div id= "mutetext" style="font-size: 10pt; font-style: italic;font-weight: bold; text-align: center; margin-top: 8%">
-                     Mute alerts
+                     Turn off alerts
                 </div>
         </div>
     </div>

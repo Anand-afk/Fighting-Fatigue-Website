@@ -39,7 +39,7 @@
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
-                        pageLanguage: 'en',
+                        pageLanguage: 'es',
                         autoDisplay: false,
                         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
                     }, 'google_translate_element');
@@ -56,6 +56,12 @@
                         }
                     }
                     changeGoogleStyles();
+                    $('.navbar-nav li div a').on('click', function(){   
+                          if(!$( this ).hasClass('dropdown-toggle')){
+                              $('.navbar-collapse').collapse('hide');
+                          } 
+                        }
+                    );
                 }
                 var googleTranslateScript = document.createElement('script');
                         googleTranslateScript.type = 'text/javascript';
@@ -103,7 +109,7 @@
     <section style="background-color: #ffffff;padding-bottom: 40px;height: auto;padding-top: 40px;">
         <div class="container" style="padding: 0px;">
             <div class="row align-items-center">
-                <div class="col" style="padding-top: 20px;padding-bottom: 0px;">
+                <div class="col" style="padding-top: 0px;padding-bottom: 0px;">
                     <div class="text-center" style="background-color: #ffffff;padding-top: 0px;">
                         <h1 style="color: rgb(37,85,90);font-size: 6vw;font-weight: bold;font-style: italic;">FatigueBan! WHY?</h1>
                         <p style="color: rgb(37,85,90);font-size: 3vw;font-style: italic;font-weight: normal;">Check&nbsp; this video out!</p>
@@ -150,7 +156,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-
+    
 </body>
 
 </html>

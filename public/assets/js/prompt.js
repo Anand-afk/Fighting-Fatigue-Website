@@ -51,48 +51,48 @@ function getNews(array, jsonObj) {
 }
 
 function getPrompts(buttonID){
-    if(document.getElementById("category").innerHTML == "Sports"){
+    if(document.getElementById("category").innerText == "Sports"){
       displayTitle(sportsInfo);
       if(buttonID == "prev"){
         displayTitle(businessInfo);
-        document.getElementById("category").innerHTML = "Business";
+        document.getElementById("category").innerText = "Business";
       }
       else if(buttonID == "next"){
         displayTitle(entertainmentInfo);
-        document.getElementById("category").innerHTML = "Entertainment";
+        document.getElementById("category").innerText = "Entertainment";
       }
     }
-    else if(document.getElementById("category").innerHTML == "Entertainment"){
+    else if(document.getElementById("category").innerText == "Entertainment"){
       displayTitle(entertainmentInfo);
       if(buttonID == "prev"){
         displayTitle(sportsInfo);
-        document.getElementById("category").innerHTML = "Sports";
+        document.getElementById("category").innerText = "Sports";
       }
       else if(buttonID == "next"){
         displayTitle(healthInfo);
-        document.getElementById("category").innerHTML = "Health";
+        document.getElementById("category").innerText = "Health";
       }
     }
-    else if(document.getElementById("category").innerHTML == "Health"){
+    else if(document.getElementById("category").innerText == "Health"){
       displayTitle(healthInfo);
       if(buttonID == "prev"){
         displayTitle(entertainmentInfo);
-        document.getElementById("category").innerHTML = "Entertainment";
+        document.getElementById("category").innerText = "Entertainment";
       }
       else if(buttonID == "next"){
         displayTitle(businessInfo);
-        document.getElementById("category").innerHTML = "Business";
+        document.getElementById("category").innerText = "Business";
       }
     }
-    else if(document.getElementById("category").innerHTML == "Business"){
+    else if(document.getElementById("category").innerText == "Business"){
       displayTitle(businessInfo);
       if(buttonID == "prev"){
         displayTitle(healthInfo);
-        document.getElementById("category").innerHTML = "Health";
+        document.getElementById("category").innerText = "Health";
       }
       else if(buttonID == "next"){
         displayTitle(sportsInfo);
-        document.getElementById("category").innerHTML = "Sports";
+        document.getElementById("category").innerText = "Sports";
       }
     }
 }
@@ -102,7 +102,7 @@ function displayTitle(array){
     var j = i+1;
     if(document.getElementById("Q"+j)){
       document.getElementById("linkT"+j).href = array[i].link;
-      document.getElementById("displayT"+j).innerHTML = array[i].title;
+      document.getElementById("displayT"+j).innerText = array[i].title;
       document.getElementById("imgT"+j).src = array[i].image;
       document.getElementById("imgT"+j).style.height = "62vw";
     }
@@ -114,7 +114,7 @@ function speak(textID){
   for(var i=0; i<20; i++){
     var j = i+1;
     if(textID == "listenT"+j){
-      var txt = document.getElementById("displayT"+j).innerHTML;
+      var txt = document.getElementById("displayT"+j).innerText;
     }
   }
     if (synth.speaking) {
