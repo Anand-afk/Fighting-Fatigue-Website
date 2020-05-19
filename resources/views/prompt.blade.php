@@ -250,7 +250,7 @@
                 <li data-target="#carousel-1" data-slide-to="19"></li>
             </ol>
         </div>
-        <h6 class=“text-right” style=“font-size: 8px;“>Powered by <a href=“terms”>News API.</a></h6>
+        <h6 class=“text-right” style=“font-size: 5px;“>Powered by <a href=“terms”>News API.</a></h6>
     </section>
     <div class="footer-basic" style="height: 100%;padding: 20px;">
         <footer class="text-center" style="padding-bottom: 0;padding-top: 0;">
