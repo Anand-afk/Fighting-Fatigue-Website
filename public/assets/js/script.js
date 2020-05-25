@@ -172,7 +172,6 @@ function startdriving() {
                 icon: image,
                 optimized: false
             });
-
             //setting the legends, so that when clicking on the cluster it will show the infowindow with
             // description respective to the severity level.
             if (severity == "high") {
@@ -182,7 +181,7 @@ function startdriving() {
                 var content = "Medium Severity: There are more than 5 accidents in this cluster. Chances of accident is moderate !!!";
             }
             //when severity is least
-            else if (severity == "least") {
+            else if (severity == "low") {
                 var content = "Least Severity: There are more than 3 accidents in this cluster. Chances of accident is less !!!";
             }
 
