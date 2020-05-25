@@ -136,7 +136,6 @@ function speak(textID){
     utterThis.voice = voices[1];
     utterThis.pitch = 1;
     utterThis.rate = 0.9;
-    utterThis.lang = 'en-US';
     synth.speak(utterThis);
   }
 }
