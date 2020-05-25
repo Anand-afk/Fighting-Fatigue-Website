@@ -39,7 +39,7 @@
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
-                        pageLanguage: 'en',
+                        pageLanguage: 'es',
                         autoDisplay: false,
                         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
                     }, 'google_translate_element');
@@ -56,6 +56,12 @@
                         }
                     }
                     changeGoogleStyles();
+                    $('.navbar-nav li div a').on('click', function(){
+                          if(!$( this ).hasClass('dropdown-toggle')){
+                              $('.navbar-collapse').collapse('hide');
+                          }
+                        }
+                    );
                 }
                 var googleTranslateScript = document.createElement('script');
                         googleTranslateScript.type = 'text/javascript';
@@ -65,22 +71,23 @@
             </script>
         </nav>
     </header>
-    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 700px;background-image: url(&quot;assets/img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 900px;">
+    <div class="login-dark" style="background-position: center;background-size: cover;background-repeat: repeat;height: 900px;background-image: url(&quot;assets/img/luke-stackpoole-ZRsJmpt9pNI-unsplash.jpg&quot;);max-height: 900px;">
         <section class="text-center" style="margin-top: 11%;margin-bottom: 0px;padding-bottom: 0px;">
             <h1 style="font-size: 6vw;font-weight: bold;color: rgb(255,255,255);">Alert Me</h1>
-            <p style="font-size: 3.5vw;color: rgb(255,255,255);">Filling the form to get proper alarm <br />when you close to  the  accident-prone areas.<br /></p>
+            <p style="font-size: 3vw;color: rgb(255,255,255);">Please fill in the form<br />to get alerts according to your personal needs.<br /></p>
             <form class="text-left" name="freqForm" method="post" style="background-color: rgba(30,40,51,0.81);height: auto;padding-bottom: 0px;padding-top: 20px;width: 350px;max-width: none;padding-right: 20px;padding-left: 20px;margin-top: 15%;"
-                action="/welcome">
+                  action="/welcome">
                 @csrf
                 <h2 class="sr-only">Login Form</h2>
-                
-                <h6 class="text-nowrap" style="padding-top: 20px;">1. How long do you drive a day?</h6>
+
+                <h6 class="text-nowrap" style="padding-top: 20px;">1. How long do you drive a day?
+                    <br></h6>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Low"><label class="form-check-label" >Less than 3 hours</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Medium"><label class="form-check-label">3 to 6 hours</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="Medium"><label class="form-check-label" >3 to 6 hours</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Q1" value="High"><label class="form-check-label" >More than 6 hours</label></div>
                 <h6 class="text-nowrap" style="padding-top: 20px;">2. How many days do you drive a week?
-                <br></h6>
-                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="Low"><label class="form-check-label">Less than 3 days</label></div>
+                    <br></h6>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="Low"><label class="form-check-label" >Less than 3 days</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="Medium"><label class="form-check-label" >3 to 5 days</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Q2" value="High"><label class="form-check-label" >More than 5 days</label></div>
                 <h6 style="padding-top: 20px;">3. When do you usually drive?<br></h6>
@@ -88,7 +95,7 @@
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" >Midnight</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="Low"><label class="form-check-label" >Neither</label></div>
                 <h6 class="text-nowrap" style="padding-top: 20px;font-size: 12px;color: rgb(255,255,255);">By clicking "Submit", you agree to our <a href="terms">term of service.</a></h6>
-                <input id="freqInput" name="freq" type="text" value="" hidden>                 
+                <input id="freqInput" name="freq" type="text" value="" hidden>
                 <div class="form-group"><button onclick="getFreq()" id ="btnSubmit" class="btn btn-primary btn-block d-sm-flex justify-content-sm-center" type="button" name="btnSubmit" >Submit</button></div>
             </form>
         </section>

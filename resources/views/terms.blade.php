@@ -56,10 +56,10 @@
                         }
                     }
                     changeGoogleStyles();
-                    $('.navbar-nav li div a').on('click', function(){   
+                    $('.navbar-nav li div a').on('click', function(){
                           if(!$( this ).hasClass('dropdown-toggle')){
                               $('.navbar-collapse').collapse('hide');
-                          } 
+                          }
                         }
                     );
                 }
@@ -73,7 +73,8 @@
     </header>
     <section class="text-center" style="padding-top: 10%;background-color: rgba(255,255,255,0.48);height: auto;width: 100%;padding-bottom: 10px;margin-top: 10%;">
         <h1 class="text-center" style="font-size: 6vw;color: rgb(0,0,0);background-color: #e1efed;padding: 10px;width: 80%;margin-right: auto;margin-left: auto;border-radius: 20px;">Terms of Service</h1>
-        <h1 class="text-left" style="font-size: 3vw;width: 80%;height: auto;padding: 20px;margin-right: auto;margin-left: auto;">https://fatigueban.me will not store data long term and will only log location data as you move for the sole purpose of tracking proximity to an alert area. https://fatigueban.me does not collect any personal information. Any duplicate location data will not be stored, and once the user closes the webpage, data will no longer be logged by the alert system. User location data will be cleared from the system
+        <h1 class="text-left" style="font-size: 3vw;width: 80%;height: auto;padding: 20px;margin-right: auto;margin-left: auto;">https://fatugeban.me will not store data long term and will only log location data as you move for the sole purpose of tracking proximity to an alert area. https://fatigueban.me does not collect any personal information, and only collects a username of
+            the user’s choosing, to associate location data being logged. Any duplicate location data will not be stored, and once the user closes the webpage, data will no longer be logged by the alert system. User location data will be cleared from the system
             after a user logs out of the webpage, and not stored – the user, as they are not providing a password or long-term account,will need to create a new username each time.<br /><br />By agreeing with these terms, you are allowing https://fatigueban.me
             the ability to use your GPS to track your location for the above-mentioned purpose, as well as use your device’s speakers to provide the above-mentioned service, and user,to receive the audio alerts, acknowledges that their device will need to be
             muted.<br /><br />By agreeing, you are allowing us to use you GPS for location and alerts, and the use of your device speakers to provide audio alerts, unless muted or you have disabled audio alerts in the alerts page.</h1>

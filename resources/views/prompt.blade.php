@@ -56,10 +56,10 @@
                         }
                     }
                     changeGoogleStyles();
-                    $('.navbar-nav li div a').on('click', function(){   
+                    $('.navbar-nav li div a').on('click', function(){
                           if(!$( this ).hasClass('dropdown-toggle')){
                               $('.navbar-collapse').collapse('hide');
-                          } 
+                          }
                         }
                     );
                 }
@@ -71,15 +71,16 @@
             </script>
         </nav>
     </header>
-    <section class="text-center" style="padding-top: 10%;background-color: rgba(255,255,255,0.48);height: auto;width: 100%;padding-bottom: 10px;margin-top: 10%;">
+    <section class="text-center" class="" style="padding-top: 10%;background-color: rgba(255,255,255,0.48);height: auto;width: 100%;padding-bottom: 10px;margin-top: 10%;">
         <h1 class="text-center" style="font-size: 6vw;color: rgb(0,0,0);background-color: #e1efed;padding: 10px;width: 80%;margin-right: auto;margin-left: auto;border-radius: 20px;">Conversation Starter</h1>
-        <h1 style="font-size: 3vw;width: 100%;height: auto;padding: 20px;padding-right: 40px;padding-left: 40px;">Choose a news topic, and just swipe left or right to see the headlines, if you don’t have time to read the headline? just press the speaker button at the bottom of the box, and it will be read to you. Have a new conversation with every passenger, get to know current events, and after the trip, if you want to read on, just tap the headline, and go to the news article to read more. Disclaimer: Please only choose a headline, or read a news article when you are stationary.&nbsp;</h1>
+        <h1 class="text-left" style="font-size: 3vw;width: 100%;height: auto;padding: 20px;padding-right: 60px;padding-left: 60px;">Choose a news topic, and just swipe left or right to see the headlines, if you don&#39;t have time to read the headline?  just press the speaker button at the bottom of the box, and it will be read to you.  Have a new conversation with every passenger,
+            get to know current events, and after the trip, if you want to read on, just tap the headline, and go to the news article to read more.  Disclaimer: Please only choose a headline, or read a news article when you are stationary.</h1>
     </section>
-    <section class="text-center" style="padding-bottom: 5px;padding-top: 0px;margin-bottom: 7px;margin-top: -7px;"><button class="btn btn-primary" id="prev" type="button" style="margin-right: 70%;font-size: 3vw;margin-top: 0px;margin-bottom: -15%;background-color: rgb(248,206,140);" onclick="getPrompts(this.id)"><i class="fa fa-arrow-left"></i></button><button class="btn btn-primary"
+    <section class="text-center notranslate" style="padding-bottom: 5px;padding-top: 0px;margin-bottom: 7px;margin-top: -7px;"><button class="btn btn-primary" id="prev" type="button" style="margin-right: 70%;font-size: 3vw;margin-top: 0px;margin-bottom: -15%;background-color: rgb(248,206,140);" onclick="getPrompts(this.id)"><i class="fa fa-arrow-left"></i></button><button class="btn btn-primary"
             id="next" type="button" style="font-size: 3vw;margin-bottom: -15%;background-color: rgba(242,163,10,0.54);" onclick="getPrompts(this.id)"><i class="fa fa-arrow-right"></i></button>
         <h1 class="text-center" id="category" style="font-size: 6vw;color: rgb(0,0,0);background-color: #fff2c2;padding: 10px;width: 60%;margin-right: auto;margin-left: auto;border-radius: 20px;">Sports</h1>
     </section>
-    <section style="width: 100%;height: auto;padding-bottom: 60px;background-color: #fbfcfb;padding-top: 10px;padding-right: 20px;padding-left: 20px;">
+    <section class="notranslate" style="width: 100%;height: auto;padding-bottom: 60px;background-color: #fbfcfb;padding-top: 10px;padding-right: 20px;padding-left: 20px;">
         <div class="carousel slide" data-ride="carousel" data-interval="false" id="carousel-1" style="margin-top: 0px;">
             <div class="carousel-inner text-center" role="listbox" style="padding-top: 0px;">
                 <div class="carousel-item active" id="Q1" style="height: auto;width: 100%;">
@@ -250,7 +251,7 @@
                 <li data-target="#carousel-1" data-slide-to="19"></li>
             </ol>
         </div>
-        <h6 class=“text-right” style=“font-size: 5px;“>Powered by <a href=“terms”>News API.</a></h6>
+        <h6 class="text-right" style="font-size: 8px;">Powered by <a href="terms">News API.</a></h6>
     </section>
     <div class="footer-basic" style="height: 100%;padding: 20px;">
         <footer class="text-center" style="padding-bottom: 0;padding-top: 0;">

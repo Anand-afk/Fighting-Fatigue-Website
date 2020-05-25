@@ -56,10 +56,10 @@
                         }
                     }
                     changeGoogleStyles();
-                    $('.navbar-nav li div a').on('click', function(){   
+                    $('.navbar-nav li div a').on('click', function(){
                           if(!$( this ).hasClass('dropdown-toggle')){
                               $('.navbar-collapse').collapse('hide');
-                          } 
+                          }
                         }
                     );
                 }
@@ -155,6 +155,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="assets/js/prompt.js"></script>
     <script src="assets/js/survey.js"></script>
 </body>
 

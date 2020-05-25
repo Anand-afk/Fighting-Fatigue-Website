@@ -56,10 +56,10 @@
                         }
                     }
                     changeGoogleStyles();
-                    $('.navbar-nav li div a').on('click', function(){   
+                    $('.navbar-nav li div a').on('click', function(){
                           if(!$( this ).hasClass('dropdown-toggle')){
                               $('.navbar-collapse').collapse('hide');
-                          } 
+                          }
                         }
                     );
                 }
@@ -138,8 +138,7 @@
             <div class="card text-center border rounded shadow-lg" style="padding: 20px;margin-left: 5px;margin-right: 5px;"><img class="card-img-top w-100 d-block" src="assets/img/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg">
                 <div class="card-body">
                     <h4 class="card-title"><strong>CONVERSATION STARTER</strong></h4>
-                    <p class="card-text">Look at current events, and start a conversation with your passengers. Find a news topic and a headline that suits you and your passengers, and talk about the latest events in news.
-            </p><a class="card-link" href="prompt"><button class="btn btn-primary" type="button">Learn More</button></a></div>
+                    <p class="card-text">Look at current events, and start a conversation with your passengers. Find a news topic and a headline that suits you and your passengers, and talk about the latest events in news.</p><a class="card-link" href="prompt"><button class="btn btn-primary" type="button">Learn More</button></a></div>
             </div>
         </div>
     </section>
@@ -156,7 +155,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    
+
 </body>
 
 </html>

@@ -56,10 +56,10 @@
                         }
                     }
                     changeGoogleStyles();
-                    $('.navbar-nav li div a').on('click', function(){   
+                    $('.navbar-nav li div a').on('click', function(){
                           if(!$( this ).hasClass('dropdown-toggle')){
                               $('.navbar-collapse').collapse('hide');
-                          } 
+                          }
                         }
                     );
                 }

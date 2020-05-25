@@ -62,8 +62,8 @@
                     id="navcol-1" style="font-size: 3vw;">
                     <ul class="nav navbar-nav d-md-flex d-lg-flex d-xl-flex justify-content-md-end justify-content-lg-end justify-content-xl-end">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="tips">Tips &amp; Tricks</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="login">Alert Me</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="tips">Tips &amp; Tricks</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="login">Alert Me</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="prompt">Conversation starter</a></li>
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Language&nbsp;</a>
                             <div class="dropdown-menu" role="menu" id="google_translate_element">

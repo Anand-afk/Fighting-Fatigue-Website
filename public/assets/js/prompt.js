@@ -3,6 +3,8 @@ var entertainmentInfo = [];
 var healthInfo = [];
 var businessInfo = [];
 
+
+
 function setSports(){
   var category = "sports";
   getJson(category, sportsInfo);
@@ -33,14 +35,15 @@ window.onload = function(){
 function getJson(category, array){
   var request = new XMLHttpRequest();
   var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
-  request.open('GET', requestURL);
-  request.responseType = 'json';
-  request.send();
-  request.onload = function() {
-    var jsonObj = request.response;
-    getNews(array, jsonObj);
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  const url = requestURL; 
+  var result = fetch(proxyurl + url) 
+  result.then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    getNews(array, data);
     getPrompts();
-  }
+  });
 }
 
 function getNews(array, jsonObj) {
@@ -103,7 +106,12 @@ function displayTitle(array){
     if(document.getElementById("Q"+j)){
       document.getElementById("linkT"+j).href = array[i].link;
       document.getElementById("displayT"+j).innerText = array[i].title;
-      document.getElementById("imgT"+j).src = array[i].image;
+      if (array[i].image) {
+        document.getElementById("imgT"+j).src = array[i].image;
+    }
+    else{
+        document.getElementById("imgT"+j).src = "";
+    }
       document.getElementById("imgT"+j).style.height = "62vw";
     }
  }
@@ -131,3 +139,4 @@ function speak(textID){
     synth.speak(utterThis);
   }
 }
+
