@@ -36,8 +36,8 @@ function getJson(category, array){
   var request = new XMLHttpRequest();
   var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url = requestURL; 
-  var result = fetch(proxyurl + url) 
+  const url = requestURL;
+  var result = fetch(proxyurl + url)
   result.then(function(response) {
     return response.json();
   }).then(function(data) {
@@ -136,6 +136,7 @@ function speak(textID){
     utterThis.voice = voices[1];
     utterThis.pitch = 1;
     utterThis.rate = 0.9;
+    utterThis.lang = 'en-US';
     synth.speak(utterThis);
   }
 }
