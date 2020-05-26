@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="/css/styles1.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="assets/img/Final%20Web%20Logo.ico" type='image/x-icon'/>
+    <link rel="icon" href="assets/img/Final20Web20Logo.ico" type='image/x-icon'/>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{csrf_token()}}">
