@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/styles1.css">
-    <link rel=“icon” href=“assets/img/Final%20Web%20Logo.png” />
+    <link rel="icon" href="assets/img/Final%20Web%20Logo.ico" type='image/x-icon'/>
 </head>
 
 <body style="background-color: rgb(0,0,0);">
