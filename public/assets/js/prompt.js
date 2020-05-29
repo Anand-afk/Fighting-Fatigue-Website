@@ -36,11 +36,12 @@ function getJson(category, array){
   var request = new XMLHttpRequest();
   var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url = requestURL;
-  var result = fetch(proxyurl + url)
+  const url = requestURL; 
+  var result = fetch(proxyurl + url) 
   result.then(function(response) {
     return response.json();
   }).then(function(data) {
+    console.log(data);
     getNews(array, data);
     getPrompts();
   });
@@ -118,17 +119,30 @@ function displayTitle(array){
 }
 
 var synth = window.speechSynthesis;
+var spoken = null;
 function speak(textID){
   for(var i=0; i<20; i++){
     var j = i+1;
-    if(textID == "listenT"+j){
-      var txt = document.getElementById("displayT"+j).innerText;
+
+    if (!synth.speaking) {
+      if(textID == "listenT"+j){
+        var txt = document.getElementById("displayT"+j).innerText; 
+    
+      }
+    
     }
-  }
-    if (synth.speaking) {
-        console.error('speechSynthesis.speaking');
+    else{
+      
+        synth.cancel();
         return;
+
     }
+    
+    
+  }
+  
+  
+   
     if (txt !== '') {
     var utterThis = new SpeechSynthesisUtterance(txt);
     var voices = speechSynthesis.getVoices();
@@ -137,6 +151,8 @@ function speak(textID){
     utterThis.pitch = 1;
     utterThis.rate = 0.9;
     synth.speak(utterThis);
+    
+  
   }
 }
 

@@ -165,7 +165,7 @@ getPrompt {
 
 .btn.btn-primary.border.rounded {
   margin-top: 25%;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 @media (min-width: 992px) {

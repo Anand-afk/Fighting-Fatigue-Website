@@ -95,7 +95,8 @@
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" >Early morning</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="High"><label class="form-check-label" >Midnight</label></div>
                 <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Q3" value="Low"><label class="form-check-label" >Neither</label></div>
-                <h6 class="text-nowrap" style="padding-top: 20px;font-size: 12px;color: rgb(255,255,255);">By clicking "Submit", you agree to our <a href="terms">term of service.</a></h6>
+
+                    <h6 class="text-nowrap" style="padding-top: 20px;font-size: 12px;color: rgb(255,255,255);">By clicking "Submit", you agree to our <a href="#" onclick="window.open('terms', 'Terms of Services','width=300,height=600')">terms of service.</a></h6>
                 <input id="freqInput" name="freq" type="text" value="" hidden>
                 <div class="form-group"><button onclick="getFreq()" id ="btnSubmit" class="btn btn-primary btn-block d-sm-flex justify-content-sm-center" type="button" name="btnSubmit" >Submit</button></div>
             </form>

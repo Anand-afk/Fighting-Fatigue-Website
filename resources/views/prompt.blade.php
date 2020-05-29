@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>FatigueBan</title>
+    <title>FatigueBan_TEST</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Article-List.css">
@@ -75,7 +75,9 @@
     <section class="text-center" class="" style="padding-top: 10%;background-color: rgba(255,255,255,0.48);height: auto;width: 100%;padding-bottom: 10px;margin-top: 10%;">
         <h1 class="text-center" style="font-size: 6vw;color: rgb(0,0,0);background-color: #e1efed;padding: 10px;width: 80%;margin-right: auto;margin-left: auto;border-radius: 20px;">Conversation Starter</h1>
         <h1 class="text-left" style="font-size: 3vw;width: 100%;height: auto;padding: 20px;padding-right: 60px;padding-left: 60px;">Choose a news topic, and just swipe left or right to see the headlines, if you don&#39;t have time to read the headline?  just press the speaker button at the bottom of the box, and it will be read to you.  Have a new conversation with every passenger,
-            get to know current events, and after the trip, if you want to read on, just tap the headline, and go to the news article to read more.  Disclaimer: Please only choose a headline, or read a news article when you are stationary.</h1>
+            get to know current events, and after the trip, if you want to read on, just tap the headline, and go to the news article to read more.</h1>
+            <h1 class="text-left" style="font-size: 3vw;width: 100%;height: auto;padding: 20px;padding-right: 60px;padding-left: 60px;">Disclaimer: Please only choose a headline, or read a news article when you are stationary.</h1>
+
     </section>
     <section class="text-center notranslate" style="padding-bottom: 5px;padding-top: 0px;margin-bottom: 7px;margin-top: -7px;"><button class="btn btn-primary" id="prev" type="button" style="margin-right: 70%;font-size: 3vw;margin-top: 0px;margin-bottom: -15%;background-color: rgb(248,206,140);" onclick="getPrompts(this.id)"><i class="fa fa-arrow-left"></i></button><button class="btn btn-primary"
             id="next" type="button" style="font-size: 3vw;margin-bottom: -15%;background-color: rgba(242,163,10,0.54);" onclick="getPrompts(this.id)"><i class="fa fa-arrow-right"></i></button>
