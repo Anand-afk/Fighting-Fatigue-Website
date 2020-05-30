@@ -192,7 +192,11 @@ function startdriving() {
             google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
                 return function () {
                     infowindow.setContent(content);
+
                     infowindow.open(map, marker);
+                    setTimeout(function () {
+                    infowindow.close();
+                    },3000)
                 };
             })(marker, content, infowindow));
         })
