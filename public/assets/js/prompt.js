@@ -3,6 +3,8 @@ var entertainmentInfo = [];
 var healthInfo = [];
 var businessInfo = [];
 
+
+
 function setSports(){
     var category = "sports";
     getJson(category, sportsInfo);
@@ -33,14 +35,16 @@ window.onload = function(){
 function getJson(category, array){
     var request = new XMLHttpRequest();
     var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function() {
-        var jsonObj = request.response;
-        getNews(array, jsonObj);
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = requestURL;
+    var result = fetch(proxyurl + url)
+    result.then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+        getNews(array, data);
         getPrompts();
-    }
+    });
 }
 
 function getNews(array, jsonObj) {
@@ -51,48 +55,48 @@ function getNews(array, jsonObj) {
 }
 
 function getPrompts(buttonID){
-    if(document.getElementById("category").innerHTML == "Sports"){
+    if(document.getElementById("category").innerText == "Sports"){
         displayTitle(sportsInfo);
         if(buttonID == "prev"){
             displayTitle(businessInfo);
-            document.getElementById("category").innerHTML = "Business";
+            document.getElementById("category").innerText = "Business";
         }
         else if(buttonID == "next"){
             displayTitle(entertainmentInfo);
-            document.getElementById("category").innerHTML = "Entertainment";
+            document.getElementById("category").innerText = "Entertainment";
         }
     }
-    else if(document.getElementById("category").innerHTML == "Entertainment"){
+    else if(document.getElementById("category").innerText == "Entertainment"){
         displayTitle(entertainmentInfo);
         if(buttonID == "prev"){
             displayTitle(sportsInfo);
-            document.getElementById("category").innerHTML = "Sports";
+            document.getElementById("category").innerText = "Sports";
         }
         else if(buttonID == "next"){
             displayTitle(healthInfo);
-            document.getElementById("category").innerHTML = "Health";
+            document.getElementById("category").innerText = "Health";
         }
     }
-    else if(document.getElementById("category").innerHTML == "Health"){
+    else if(document.getElementById("category").innerText == "Health"){
         displayTitle(healthInfo);
         if(buttonID == "prev"){
             displayTitle(entertainmentInfo);
-            document.getElementById("category").innerHTML = "Entertainment";
+            document.getElementById("category").innerText = "Entertainment";
         }
         else if(buttonID == "next"){
             displayTitle(businessInfo);
-            document.getElementById("category").innerHTML = "Business";
+            document.getElementById("category").innerText = "Business";
         }
     }
-    else if(document.getElementById("category").innerHTML == "Business"){
+    else if(document.getElementById("category").innerText == "Business"){
         displayTitle(businessInfo);
         if(buttonID == "prev"){
             displayTitle(healthInfo);
-            document.getElementById("category").innerHTML = "Health";
+            document.getElementById("category").innerText = "Health";
         }
         else if(buttonID == "next"){
             displayTitle(sportsInfo);
-            document.getElementById("category").innerHTML = "Sports";
+            document.getElementById("category").innerText = "Sports";
         }
     }
 }
@@ -102,25 +106,43 @@ function displayTitle(array){
         var j = i+1;
         if(document.getElementById("Q"+j)){
             document.getElementById("linkT"+j).href = array[i].link;
-            document.getElementById("displayT"+j).innerHTML = array[i].title;
-            document.getElementById("imgT"+j).src = array[i].image;
+            document.getElementById("displayT"+j).innerText = array[i].title;
+            if (array[i].image) {
+                document.getElementById("imgT"+j).src = array[i].image;
+            }
+            else{
+                document.getElementById("imgT"+j).src = "";
+            }
             document.getElementById("imgT"+j).style.height = "62vw";
         }
     }
 }
 
 var synth = window.speechSynthesis;
+var spoken = null;
 function speak(textID){
     for(var i=0; i<20; i++){
         var j = i+1;
-        if(textID == "listenT"+j){
-            var txt = document.getElementById("displayT"+j).innerHTML;
+
+        if (!synth.speaking) {
+            if(textID == "listenT"+j){
+                var txt = document.getElementById("displayT"+j).innerText;
+
+            }
+
         }
+        else{
+
+            synth.cancel();
+            return;
+
+        }
+
+
     }
-    if (synth.speaking) {
-        console.error('speechSynthesis.speaking');
-        return;
-    }
+
+
+
     if (txt !== '') {
         var utterThis = new SpeechSynthesisUtterance(txt);
         var voices = speechSynthesis.getVoices();
@@ -129,5 +151,8 @@ function speak(textID){
         utterThis.pitch = 1;
         utterThis.rate = 0.9;
         synth.speak(utterThis);
+
+
     }
 }
+
