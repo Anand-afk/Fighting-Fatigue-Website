@@ -32,17 +32,15 @@ window.onload = function(){
 
 function getJson(category, array){
     var request = new XMLHttpRequest();
-    var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=9aaf1160bef14522b81fa89a6e95315b";
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = requestURL;
-    var result = fetch(proxyurl + url)
-    result.then(function(response) {
-        return response.json();
-    }).then(function(data) {
-        console.log(data);
-        getNews(array, data);
+    var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+        var jsonObj = request.response;
+        getNews(array, jsonObj);
         getPrompts();
-    });
+    }
 }
 
 function getNews(array, jsonObj) {
