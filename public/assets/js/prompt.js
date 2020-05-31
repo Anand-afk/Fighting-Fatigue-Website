@@ -54,6 +54,8 @@ window.onload = function(){
 // }
 function getJson(category, array){
     var request = new XMLHttpRequest();
+    request.setRequestHeader('Access-Control-Allow-Headers','*');
+    request.setRequestHeader('Access-Control-Allow-Origin','*');
     var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
     request.open('GET', requestURL);
     request.responseType = 'json';
