@@ -3,6 +3,8 @@ var entertainmentInfo = [];
 var healthInfo = [];
 var businessInfo = [];
 
+
+
 function setSports(){
     var category = "sports";
     getJson(category, sportsInfo);
@@ -32,7 +34,7 @@ window.onload = function(){
 
 function getJson(category, array){
     var request = new XMLHttpRequest();
-    var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=9aaf1160bef14522b81fa89a6e95315b";
+    var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = requestURL;
     var result = fetch(proxyurl + url)
@@ -45,21 +47,6 @@ function getJson(category, array){
     });
 }
 
-
-// function getJson(category, array){
-// var request = new XMLHttpRequest();
-// var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
-//
-//
-// request.open('GET', requestURL);
-// request.responseType = 'json';
-// request.send();
-// request.onload = function() {
-//     var jsonObj = request.response;
-//     getNews(array, jsonObj);
-//     getPrompts();
-// }
-// }
 function getNews(array, jsonObj) {
     var titles = jsonObj['articles'];
     for(var i = 0; i < titles.length; i++){
@@ -113,6 +100,7 @@ function getPrompts(buttonID){
         }
     }
 }
+
 function displayTitle(array){
     for(var i=0; i<array.length; i++){
         var j = i+1;
@@ -129,6 +117,7 @@ function displayTitle(array){
         }
     }
 }
+
 var synth = window.speechSynthesis;
 var spoken = null;
 function speak(textID){
@@ -138,13 +127,21 @@ function speak(textID){
         if (!synth.speaking) {
             if(textID == "listenT"+j){
                 var txt = document.getElementById("displayT"+j).innerText;
+
             }
+
         }
         else{
+
             synth.cancel();
             return;
+
         }
+
+
     }
+
+
 
     if (txt !== '') {
         var utterThis = new SpeechSynthesisUtterance(txt);
@@ -154,6 +151,9 @@ function speak(textID){
         utterThis.pitch = 1;
         utterThis.rate = 0.9;
         synth.speak(utterThis);
+
+
     }
 }
+
 
