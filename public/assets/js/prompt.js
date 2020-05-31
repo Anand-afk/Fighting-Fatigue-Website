@@ -33,9 +33,9 @@ window.onload = function(){
 function getJson(category, array){
     var request = new XMLHttpRequest();
     var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=9aaf1160bef14522b81fa89a6e95315b";
-    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = requestURL;
-    var result = fetch(url)
+    var result = fetch(proxyurl + url)
     result.then(function(response) {
         return response.json();
     }).then(function(data) {
