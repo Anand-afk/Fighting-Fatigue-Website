@@ -1,64 +1,218 @@
+// var sportsInfo = [];
+// var entertainmentInfo = [];
+// var healthInfo = [];
+// var businessInfo = [];
+//
+//
+//
+// function setSports(){
+//   var category = "sports";
+//   getJson(category, sportsInfo);
+// }
+//
+// function setEntertainment(){
+//   var category = "entertainment";
+//   getJson(category, entertainmentInfo);
+// }
+//
+// function setHealth(){
+//   var category = "health";
+//   getJson(category, healthInfo);
+// }
+//
+// function setBusiness(){
+//   var category = "business";
+//   getJson(category, businessInfo);
+// }
+//
+// window.onload = function(){
+//   setSports();
+//   setEntertainment();
+//   setHealth();
+//   setBusiness();
+// }
+// //
+// // function getJson(category, array){
+// //   var request = new XMLHttpRequest();
+// //     let headers = new Headers();
+// //
+// //     headers.append('Content-Type', 'application/json');
+// //     headers.append('Accept', 'application/json');
+// //
+// //     headers.append('Access-Control-Allow-Origin', '*');
+// //     headers.append('Access-Control-Allow-Credentials', 'true');
+// //   var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
+// //   // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+// //   const url = requestURL;
+// //   var result = fetch(url,  {  mode: 'no-cors', headers:headers});
+// //   result.then(function(response) {
+// //     return response.json();
+// //   }).then(function(data) {
+// //     getNews(array, data);
+// //     getPrompts();
+// //   });
+// // }
+// function getJson(category, array){
+//     var request = new XMLHttpRequest();
+//     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+//     var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
+//     request.open('GET',proxyurl + requestURL);
+//     request.setRequestHeader('Access-Control-Allow-Headers','*');
+//     request.setRequestHeader('Access-Control-Allow-Origin','*');
+//     request.responseType = 'json';
+//     request.send();
+//     request.onload = function() {
+//         var jsonObj = request.response;
+//         getNews(array, jsonObj);
+//         getPrompts();
+//     }
+// }
+//
+// function getNews(array, jsonObj) {
+//   var titles = jsonObj['articles'];
+//   console.log(titles);
+//   for(var i = 0; i < titles.length; i++){
+//     array.push({"title": titles[i].title, "image": titles[i].urlToImage, "link": titles[i].url});
+//   }
+// }
+//
+// function getPrompts(buttonID){
+//     if(document.getElementById("category").innerText == "Sports"){
+//       displayTitle(sportsInfo);
+//       if(buttonID == "prev"){
+//         displayTitle(businessInfo);
+//         document.getElementById("category").innerText = "Business";
+//       }
+//       else if(buttonID == "next"){
+//         displayTitle(entertainmentInfo);
+//         document.getElementById("category").innerText = "Entertainment";
+//       }
+//     }
+//     else if(document.getElementById("category").innerText == "Entertainment"){
+//       displayTitle(entertainmentInfo);
+//       if(buttonID == "prev"){
+//         displayTitle(sportsInfo);
+//         document.getElementById("category").innerText = "Sports";
+//       }
+//       else if(buttonID == "next"){
+//         displayTitle(healthInfo);
+//         document.getElementById("category").innerText = "Health";
+//       }
+//     }
+//     else if(document.getElementById("category").innerText == "Health"){
+//       displayTitle(healthInfo);
+//       if(buttonID == "prev"){
+//         displayTitle(entertainmentInfo);
+//         document.getElementById("category").innerText = "Entertainment";
+//       }
+//       else if(buttonID == "next"){
+//         displayTitle(businessInfo);
+//         document.getElementById("category").innerText = "Business";
+//       }
+//     }
+//     else if(document.getElementById("category").innerText == "Business"){
+//       displayTitle(businessInfo);
+//       if(buttonID == "prev"){
+//         displayTitle(healthInfo);
+//         document.getElementById("category").innerText = "Health";
+//       }
+//       else if(buttonID == "next"){
+//         displayTitle(sportsInfo);
+//         document.getElementById("category").innerText = "Sports";
+//       }
+//     }
+// }
+//
+// function displayTitle(array){
+//   for(var i=0; i<array.length; i++){
+//     var j = i+1;
+//     if(document.getElementById("Q"+j)){
+//       document.getElementById("linkT"+j).href = array[i].link;
+//       document.getElementById("displayT"+j).innerText = array[i].title;
+//       if (array[i].image) {
+//         document.getElementById("imgT"+j).src = array[i].image;
+//     }
+//     else{
+//         document.getElementById("imgT"+j).src = "";
+//     }
+//       document.getElementById("imgT"+j).style.height = "62vw";
+//     }
+//  }
+// }
+//
+// var synth = window.speechSynthesis;
+// var spoken = null;
+// function speak(textID){
+//   for(var i=0; i<20; i++){
+//     var j = i+1;
+//
+//     if (!synth.speaking) {
+//       if(textID == "listenT"+j){
+//         var txt = document.getElementById("displayT"+j).innerText;
+//
+//       }
+//
+//     }
+//     else{
+//
+//         synth.cancel();
+//         return;
+//
+//     }
+//
+//
+//   }
+//
+//
+//     if (txt !== '') {
+//     var utterThis = new SpeechSynthesisUtterance(txt);
+//     var voices = speechSynthesis.getVoices();
+//     utterThis.voiceURI = 'native';
+//     utterThis.voice = voices[1];
+//     utterThis.pitch = 1;
+//     utterThis.rate = 0.9;
+//     synth.speak(utterThis);
+//
+//
+//   }
+// }
+//
 var sportsInfo = [];
 var entertainmentInfo = [];
 var healthInfo = [];
 var businessInfo = [];
 
-
-
 function setSports(){
-  var category = "sports";
-  getJson(category, sportsInfo);
+    var category = "sports";
+    getJson(category, sportsInfo);
 }
 
 function setEntertainment(){
-  var category = "entertainment";
-  getJson(category, entertainmentInfo);
+    var category = "entertainment";
+    getJson(category, entertainmentInfo);
 }
 
 function setHealth(){
-  var category = "health";
-  getJson(category, healthInfo);
+    var category = "health";
+    getJson(category, healthInfo);
 }
 
 function setBusiness(){
-  var category = "business";
-  getJson(category, businessInfo);
+    var category = "business";
+    getJson(category, businessInfo);
 }
 
 window.onload = function(){
-  setSports();
-  setEntertainment();
-  setHealth();
-  setBusiness();
+    setSports();
+    setEntertainment();
+    setHealth();
+    setBusiness();
 }
-//
-// function getJson(category, array){
-//   var request = new XMLHttpRequest();
-//     let headers = new Headers();
-//
-//     headers.append('Content-Type', 'application/json');
-//     headers.append('Accept', 'application/json');
-//
-//     headers.append('Access-Control-Allow-Origin', '*');
-//     headers.append('Access-Control-Allow-Credentials', 'true');
-//   var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
-//   // const proxyurl = "https://cors-anywhere.herokuapp.com/";
-//   const url = requestURL;
-//   var result = fetch(url,  {  mode: 'no-cors', headers:headers});
-//   result.then(function(response) {
-//     return response.json();
-//   }).then(function(data) {
-//     getNews(array, data);
-//     getPrompts();
-//   });
-// }
+
 function getJson(category, array){
     var request = new XMLHttpRequest();
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     var requestURL = "https://newsapi.org/v2/top-headlines?country=au&category="+category+"&apiKey=8f6d87bb2fed4866a2e78c684776f53b";
-    request.open('GET',proxyurl + requestURL);
-    request.setRequestHeader('Access-Control-Allow-Headers','*');
-    request.setRequestHeader('Access-Control-Allow-Origin','*');
+    request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
     request.onload = function() {
@@ -69,111 +223,90 @@ function getJson(category, array){
 }
 
 function getNews(array, jsonObj) {
-  var titles = jsonObj['articles'];
-  console.log(titles);
-  for(var i = 0; i < titles.length; i++){
-    array.push({"title": titles[i].title, "image": titles[i].urlToImage, "link": titles[i].url});
-  }
+    var titles = jsonObj['articles'];
+    for(var i = 0; i < titles.length; i++){
+        array.push({"title": titles[i].title, "image": titles[i].urlToImage, "link": titles[i].url});
+    }
 }
 
 function getPrompts(buttonID){
-    if(document.getElementById("category").innerText == "Sports"){
-      displayTitle(sportsInfo);
-      if(buttonID == "prev"){
-        displayTitle(businessInfo);
-        document.getElementById("category").innerText = "Business";
-      }
-      else if(buttonID == "next"){
-        displayTitle(entertainmentInfo);
-        document.getElementById("category").innerText = "Entertainment";
-      }
-    }
-    else if(document.getElementById("category").innerText == "Entertainment"){
-      displayTitle(entertainmentInfo);
-      if(buttonID == "prev"){
+    if(document.getElementById("category").innerHTML == "Sports"){
         displayTitle(sportsInfo);
-        document.getElementById("category").innerText = "Sports";
-      }
-      else if(buttonID == "next"){
-        displayTitle(healthInfo);
-        document.getElementById("category").innerText = "Health";
-      }
+        if(buttonID == "prev"){
+            displayTitle(businessInfo);
+            document.getElementById("category").innerHTML = "Business";
+        }
+        else if(buttonID == "next"){
+            displayTitle(entertainmentInfo);
+            document.getElementById("category").innerHTML = "Entertainment";
+        }
     }
-    else if(document.getElementById("category").innerText == "Health"){
-      displayTitle(healthInfo);
-      if(buttonID == "prev"){
+    else if(document.getElementById("category").innerHTML == "Entertainment"){
         displayTitle(entertainmentInfo);
-        document.getElementById("category").innerText = "Entertainment";
-      }
-      else if(buttonID == "next"){
-        displayTitle(businessInfo);
-        document.getElementById("category").innerText = "Business";
-      }
+        if(buttonID == "prev"){
+            displayTitle(sportsInfo);
+            document.getElementById("category").innerHTML = "Sports";
+        }
+        else if(buttonID == "next"){
+            displayTitle(healthInfo);
+            document.getElementById("category").innerHTML = "Health";
+        }
     }
-    else if(document.getElementById("category").innerText == "Business"){
-      displayTitle(businessInfo);
-      if(buttonID == "prev"){
+    else if(document.getElementById("category").innerHTML == "Health"){
         displayTitle(healthInfo);
-        document.getElementById("category").innerText = "Health";
-      }
-      else if(buttonID == "next"){
-        displayTitle(sportsInfo);
-        document.getElementById("category").innerText = "Sports";
-      }
+        if(buttonID == "prev"){
+            displayTitle(entertainmentInfo);
+            document.getElementById("category").innerHTML = "Entertainment";
+        }
+        else if(buttonID == "next"){
+            displayTitle(businessInfo);
+            document.getElementById("category").innerHTML = "Business";
+        }
+    }
+    else if(document.getElementById("category").innerHTML == "Business"){
+        displayTitle(businessInfo);
+        if(buttonID == "prev"){
+            displayTitle(healthInfo);
+            document.getElementById("category").innerHTML = "Health";
+        }
+        else if(buttonID == "next"){
+            displayTitle(sportsInfo);
+            document.getElementById("category").innerHTML = "Sports";
+        }
     }
 }
 
 function displayTitle(array){
-  for(var i=0; i<array.length; i++){
-    var j = i+1;
-    if(document.getElementById("Q"+j)){
-      document.getElementById("linkT"+j).href = array[i].link;
-      document.getElementById("displayT"+j).innerText = array[i].title;
-      if (array[i].image) {
-        document.getElementById("imgT"+j).src = array[i].image;
+    for(var i=0; i<array.length; i++){
+        var j = i+1;
+        if(document.getElementById("Q"+j)){
+            document.getElementById("linkT"+j).href = array[i].link;
+            document.getElementById("displayT"+j).innerHTML = array[i].title;
+            document.getElementById("imgT"+j).src = array[i].image;
+            document.getElementById("imgT"+j).style.height = "62vw";
+        }
     }
-    else{
-        document.getElementById("imgT"+j).src = "";
-    }
-      document.getElementById("imgT"+j).style.height = "62vw";
-    }
- }
 }
 
 var synth = window.speechSynthesis;
-var spoken = null;
 function speak(textID){
-  for(var i=0; i<20; i++){
-    var j = i+1;
-
-    if (!synth.speaking) {
-      if(textID == "listenT"+j){
-        var txt = document.getElementById("displayT"+j).innerText;
-
-      }
-
+    for(var i=0; i<20; i++){
+        var j = i+1;
+        if(textID == "listenT"+j){
+            var txt = document.getElementById("displayT"+j).innerHTML;
+        }
     }
-    else{
-
-        synth.cancel();
+    if (synth.speaking) {
+        console.error('speechSynthesis.speaking');
         return;
-
     }
-
-
-  }
-
-
     if (txt !== '') {
-    var utterThis = new SpeechSynthesisUtterance(txt);
-    var voices = speechSynthesis.getVoices();
-    utterThis.voiceURI = 'native';
-    utterThis.voice = voices[1];
-    utterThis.pitch = 1;
-    utterThis.rate = 0.9;
-    synth.speak(utterThis);
-
-
-  }
+        var utterThis = new SpeechSynthesisUtterance(txt);
+        var voices = speechSynthesis.getVoices();
+        utterThis.voiceURI = 'native';
+        utterThis.voice = voices[1];
+        utterThis.pitch = 1;
+        utterThis.rate = 0.9;
+        synth.speak(utterThis);
+    }
 }
-
